@@ -5,12 +5,12 @@ body{
 
 
 
-.App-header {
+.Pageheader {
   background-color: rgb(14, 167, 78);
-  height: 50px;
+  /* height: 50px;
   padding: 20px;
   color: white;
-  
+   */
 }
 
 .App-intro {
