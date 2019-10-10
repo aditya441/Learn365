@@ -1,0 +1,20 @@
+body{
+  margin: 0;
+}
+
+
+
+
+.App-header {
+  background-color: rgb(14, 167, 78);
+  height: 50px;
+  padding: 20px;
+  color: white;
+  
+}
+
+.App-intro {
+  font-size: large;
+}
+
+
