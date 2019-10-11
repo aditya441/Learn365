@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Header from './components/HeaderHomePage';
 
 import './App.css';
 import { BrowserRouter as Router,Route } from 'react-router-dom';
 import Register from './components/registration'
 import Login from './components/login';
 import Welcome from './components/welcomePage';
+import Homepage from './components/Homepage';
 
 class App extends Component {
   render() {
@@ -13,10 +13,10 @@ class App extends Component {
       <div className="App">
         
         <Router>
-        <Route exact path='/' render={props=>(
-           <div className="Pageheader">
-           <Header />
-           </div>
+        <Route exact path='/' render={props =>(
+          <React.Fragment>
+            <Homepage />
+          </React.Fragment>
         )} />
         <Route exact path='/login' render={props =>(
           <React.Fragment>

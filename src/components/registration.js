@@ -45,8 +45,8 @@ class Register extends Component {
                             <Link to='/login'>
                             <button className="FormField__Button mr-20">Sign Up</button> 
 
-                            </Link>
                            <a href="#" className="FormField__Link">I'm already member</a>
+                            </Link>
                         </div>
 
                     </form>
