@@ -2,19 +2,64 @@ body{
   margin: 0;
 }
 
-
+.App {
+  height: 100vh;
+  display: flex;
+  flex-flow: wrap;
+  color: white;
+  text-align: center;
+}
 
 
 .App-header {
   background-color: rgb(14, 167, 78);
   height: 50px;
+  width: 100vw;
   padding: 20px;
   color: white;
+  text-align: center;
   
 }
 
 .App-intro {
   font-size: large;
 }
+ .App__Aside {
+  width: 47%;
+  background-color: #66DAC7;
+  height: 85vh;
 
-
+} 
+.App__Form {
+  width: 100vw;
+  height: 80vh;
+  background-color: #2E4158;
+  padding: 25px 40px;
+  overflow: auto
+} 
+.FormTitle__Link {
+  color: white;
+  background-color: skyblue;
+  padding: 5px;
+ 
+}
+.FormField {
+  padding-top: 50px;
+  font-size: 1.5rem;
+}
+.FormField__Input {
+  margin-left: 20px;
+  font-size: 1.2rem;
+}
+.FormField__Link {
+  padding-left: 10px;
+  font-size: 1.2rem;
+  color: white;
+}
+.FormField__Button {
+ padding: 5px;
+ font-size: 1.1rem;
+}
+.FormTitle {
+  color: red;
+}
