@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
-// import  Route  from 'react-router-dom';
+import { Link } from 'react-router-dom';
 class Register extends Component {
+
+    state={
+        redirect:false
+    }
+
+handleClick=()=>{
+    this.setState({
+        redirect:true
+    })
+   
+}
     render () {
         return (
-            
             <div>
             <div className="App__Form">
                 <div className="FormTitle">
@@ -34,11 +44,15 @@ class Register extends Component {
                                 <input className="FormField__Checkbox" type="checkbox" name="hasAgreed"/>I agree all statements in <a href="" className="FormField__TermsLink">terms of service</a>
                                 </label> 
                             </div> */}
+                        <div className="FormField">
+                        
+                            <Link to='/login'>
+                            <button className="FormField__Button mr-20">Sign Up</button> 
 
-                            <div className="FormField">
-                                <button className="FormField__Button mr-20">Sign Up</button> <a href="#"
-                                className="FormField__Link">I'm already member</a>
-                            </div>
+                           <a href="#" className="FormField__Link">I'm already member</a>
+                            </Link>
+                        </div>
+
 
                         </form>
                     </div>  

@@ -4,9 +4,6 @@ body{
 
 .App {
   height: 100vh;
-  display: flex;
-  flex-flow: wrap;
-  color: white;
   text-align: center;
 }
 
@@ -20,21 +17,28 @@ body{
   text-align: center;
   
 }
+.headerHomePage  {
+  background-color: rgb(14, 167, 78);
+  height: 12vh;
+  /* width: 100%; */
+ }
+ 
+ .navbar-brand {
+  font-size: 1.8em;
+  font-weight: 700;
+  font-family: "Helvetica";
+ }
 
 .App-intro {
   font-size: large;
 }
- .App__Aside {
-  width: 47%;
-  background-color: #66DAC7;
-  height: 85vh;
-
-} 
+ 
 .App__Form {
   width: 100vw;
   height: 80vh;
-  background-color: #2E4158;
-  padding: 25px 40px;
+  
+  background-color: rgb(235, 239, 245);
+  /* padding: 25px; */
   overflow: auto
 } 
 .FormTitle__Link {
@@ -54,13 +58,12 @@ body{
 .FormField__Link {
   padding-left: 10px;
   font-size: 1.2rem;
-  color: white;
+  color: black;
 }
 .FormField__Button {
  padding: 5px;
  font-size: 1.1rem;
 }
 .FormTitle {
-  color: red;
-  font-size: 1.2rem;
+  color:black;
 }
