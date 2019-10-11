@@ -4,16 +4,7 @@ import { Link } from 'react-router-dom';
 // import { Redirect } from 'react-router-dom';
 class Register extends Component {
 
-    state={
-        redirect:false
-    }
 
-handleClick=()=>{
-    this.setState({
-        redirect:true
-    })
-   
-}
 
 
 

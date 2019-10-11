@@ -2,24 +2,36 @@ body{
   margin: 0;
 }
 
-.App {
+/* .App {
   height: 100vh;
   display: flex;
   flex-flow: wrap;
   /* color: white; */
-  text-align: center;
-}
+  /* text-align: center; */
+/* } */ 
 
 
 .App-header {
   background-color: rgb(14, 167, 78);
-  height: 50px;
+  /* height: 50px; */
   width: 100vw;
   padding: 20px;
   color: white;
   text-align: center;
-  
 }
+  
+.headerHomePage  {
+  background-color: rgb(14, 167, 78);
+  height: 12vh;
+  /* width: 100%; */
+}
+
+.navbar-brand {
+  font-size: 1.8em;
+  font-weight: 700;
+  font-family: "Helvetica";
+}
+
 
 .App-intro {
   font-size: large;
@@ -33,7 +45,7 @@ body{
 .App__Form {
   width: 100vw;
   height: 80vh;
-  background-color: #2E4158;
+  background-color: rgb(163, 185, 211);
   padding: 25px 40px;
   overflow: auto
 } 
@@ -63,3 +75,7 @@ body{
 .FormTitle {
   color:white;
 }
+
+
+
+
