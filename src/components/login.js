@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
     render () {
@@ -22,7 +23,10 @@ class Login extends Component {
                         </div>
 
                         <div className="FormField">
+                            <Link to='/welcome'>
                             <button className="FormField__Button">Sign In</button> 
+
+                            </Link>
                         </div>
 
                     </form>

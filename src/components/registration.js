@@ -1,5 +1,22 @@
 import React, { Component } from 'react';
+// import { BrowserRouter as Router,Route} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 class Register extends Component {
+
+    state={
+        redirect:false
+    }
+
+handleClick=()=>{
+    this.setState({
+        redirect:true
+    })
+   
+}
+
+
+
     render () {
         return (
             <div>
@@ -33,8 +50,12 @@ class Register extends Component {
                         </div> */}
 
                         <div className="FormField">
-                            <button className="FormField__Button mr-20">Sign Up</button> <a href="#"
-                            className="FormField__Link">I'm already member</a>
+                        
+                            <Link to='/login'>
+                            <button className="FormField__Button mr-20">Sign Up</button> 
+
+                            </Link>
+                           <a href="#" className="FormField__Link">I'm already member</a>
                         </div>
 
                     </form>
