@@ -2,19 +2,22 @@ body{
   margin: 0;
 }
 
-
-
-
-.Pageheader {
+.headerHomePage  {
   background-color: rgb(14, 167, 78);
-  /* height: 50px;
-  padding: 20px;
-  color: white;
-   */
+  height: 12vh;
 }
+.navbar-brand {
+  font-size: 1.8em;
+  font-weight: 700;
+  font-family: "Helvetica";
+}
+
 
 .App-intro {
   font-size: large;
 }
+
+
+
 
 
