@@ -42,7 +42,15 @@ body{
   
   background-color: rgb(235, 239, 245);
   /* padding: 25px; */
-  overflow: auto
+  overflow: auto;
+  width: 40%;
+  margin-left:30%;
+  margin-top: 3em;
+  border:0.5px solid rgb(97, 94, 94);
+  border-radius: 2%;
+  box-shadow:5px 10px #bebabac0;
+  padding: 30px;
+
 } 
 .FormTitle__Link {
   color: white;
@@ -52,11 +60,11 @@ body{
 }
 .FormField {
   padding-top: 50px;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 .FormField__Input {
   margin-left: 20px;
-  font-size: 1.2rem;
+  font-size: 1.rem;
 }
 .FormField__Link {
   padding-left: 10px;
@@ -69,4 +77,13 @@ body{
 }
 .FormTitle {
   color:black;
+}
+.signup-form{
+  width: 40%;
+  margin-left:30%;
+  margin-top: 3em;
+  border:0.5px solid rgb(97, 94, 94);
+  border-radius: 2%;
+  box-shadow:5px 10px #bebabac0;
+  padding: 50px;
 }

@@ -26,8 +26,10 @@ render(){
                 </Link>
             </li>
             <li className="nav-item">
-                
+                <Link to='/'>
+
               <a onClick={()=> firebase.auth().signOut()} className="nav-link" href="#"><span className="fas fa-sign-in-alt"></span> Sign Out</a>
+                </Link>
                 
             </li>
           </ul>

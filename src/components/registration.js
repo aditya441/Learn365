@@ -27,7 +27,7 @@ componentDidMount=()=>{
 
     render () {
         return (
-            <div>
+            <div className='signup-form'>
                 {this.state.isSignedIn ? (
                     // <Navbar />
                     <h2>welcome</h2>

@@ -6,6 +6,7 @@ import Login from './components/login';
 import Welcome from './components/welcomePage';
 import Header from './components/Header';
 import firebase from 'firebase';
+import CreateCourse from './components/CreateCourse';
 import firebaseConfig from './firebase.config';
 firebase.initializeApp(firebaseConfig);
 class App extends Component {
@@ -39,6 +40,12 @@ class App extends Component {
         <Route  path='/welcome' render={props =>(
           <React.Fragment>
         <Welcome/>
+
+          </React.Fragment>
+        )} />
+        <Route exact path='/createcourse' render={props =>(
+          <React.Fragment>
+        <CreateCourse />
 
           </React.Fragment>
         )} />
