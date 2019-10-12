@@ -168,6 +168,60 @@ b,strong {
 .FormTitle {
   color:black;
 }
+
+.wf {
+  outline: 1px solid black;
+}
+.wf1 {
+  color: white;
+  text-align: center;
+  font-size: bold;
+  width: 100px;
+  height: 250px;
+  background-image: url(./gudone.jpg);
+  background-size: cover;
+}
+.wf2 {
+  color: white;
+  text-align: center;
+  font-size: bold;
+  width: 100px;
+  height: 250px;
+  background-image: url(./instructor.jpg);
+  background-size: cover;
+}
+.ns {
+  background-color: silver;
+}
+.ns2 {
+  background-color: gray;
+}
+.row  {
+  min-height: 300px;
+}
+.welcome {
+  padding-top: 5rem;
+  height: 88vh;
+  background-image: url(./color.jpg);
+  background-size: cover;
+}
+.learner {
+  background-image: url(./color.jpg);
+ 
+  height: 88vh;
+  padding-top: 5rem;
+  background-size: cover;
+  
+}
+#sidebar-wrapper  {
+  color: white;
+  background-color: black;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  
+}
 .signup-form{
   width: 40%;
   margin-left:30%;
@@ -177,6 +231,8 @@ b,strong {
   box-shadow:5px 10px #bebabac0;
   padding: 50px;
  }
-
-
+ .img-responsive {
+   background-size: cover;
+ }
+ 
 

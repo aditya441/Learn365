@@ -24,13 +24,13 @@ componentDidMount=()=>{
         this.setState({ isSignedIn: !!user});
     })
 }
-
     render () {
         return (
             <div className="signup-form">
                 {this.state.isSignedIn ? (
                     // <Navbar />
-                    <h2>welcome</h2>
+                    <h1>sign up here</h1>
+                    //
                     ):(
                         <StyledFirebaseAuth
                         uiConfig={this.uiConfig}
