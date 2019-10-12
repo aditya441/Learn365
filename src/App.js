@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import './App.css';
 import Register from './components/registration'
 import Login from './components/login';
@@ -8,6 +9,9 @@ import Learner from './components/Learner';
 import Courses from './components/Courses';
 import Video from './components/video';
 import Header from './components/Header';
+import Homepage from './components/Homepage';
+import HowWeWork from './components/howWeWork';
+import Headersignup from './components/HeadenSignup';
 import firebase from 'firebase';
 import firebaseConfig from './firebase.config';
 firebase.initializeApp(firebaseConfig);
@@ -18,14 +22,18 @@ class App extends Component {
         <Router>
         <Route exact path='/' render={props =>(
           <React.Fragment>
+            <div className="try">
             <Header/>
+            <Homepage />
+            </div>
+            <HowWeWork />
           </React.Fragment>
         )} />
         
         <Route exact path='/login' render={props =>(
           <React.Fragment>
            
-         <Header/>
+         <Headersignup/>
               <Login />
 
           </React.Fragment>
@@ -34,21 +42,21 @@ class App extends Component {
         <Route  path='/signup' render={props =>(
           <React.Fragment>
          
-         <Header/>
+         <Headersignup/>
         <Register />
 
           </React.Fragment>
         )} />
         <Route  path='/welcome' render={props =>(
           <React.Fragment>
-            <Header />
+            <Headersignup />
         <Welcome/>
 
           </React.Fragment>
         )} />
          <Route  path='/Learner' render={props =>(
           <React.Fragment>
-            <Header />
+            <Headersignup/>
         <Learner/>
 
           </React.Fragment>
@@ -56,7 +64,7 @@ class App extends Component {
 
       <Route  path='/Courses' render={props =>(
           <React.Fragment>
-            <Header />
+            <Headersignup />
         <Courses/>
 
           </React.Fragment>
@@ -64,12 +72,14 @@ class App extends Component {
 
 <Route  path='/video' render={props =>(
           <React.Fragment>
-            <Header />
+            <Headersignup />
         <Video/>
 
           </React.Fragment>
         )} />
+        
        </Router>
+       
       </div>
     );
   }

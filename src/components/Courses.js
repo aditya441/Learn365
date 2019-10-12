@@ -16,6 +16,7 @@ class Courses extends Component {
                             </Link>
                             
                         </div>
+                        {/* <li> <a href="#">section2</a></li> */}
                             {/* <li> <a href="#">section1</a></li> */}
                             
                         </ul>
