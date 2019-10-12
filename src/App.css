@@ -9,7 +9,7 @@ body{
 
 
 .App-header {
-  background-color: rgb(14, 167, 78);
+  /* background-color: rgb(14, 167, 78); */
   height: 50px;
   width: 100vw;
   padding: 20px;
@@ -18,15 +18,17 @@ body{
   
 }
 .headerHomePage  {
-  background-color: rgb(14, 167, 78);
+  background-color: lavenderblush;
+  /* background-color: rgb(14, 167, 78); */
   height: 12vh;
   /* width: 100%; */
  }
  
  .navbar-brand {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 1.8em;
   font-weight: 700;
-  font-family: "Helvetica";
+  
  }
 
 .App-intro {
@@ -66,4 +68,43 @@ body{
 }
 .FormTitle {
   color:black;
+}
+
+.wf {
+  outline: 1px solid black;
+}
+.ns {
+  background-color: silver;
+}
+.ns2 {
+  background-color: gray;
+}
+.row  {
+  min-height: 300px;
+}
+.my-container {
+  width: 100%;
+  margin-left: 14rem;
+  padding-right: 10rem;
+  padding-top: 5rem;
+  height: 88vh;
+  background-image: url(./image4.jpg);
+  background-size: cover;
+}
+.learner {
+  background-image: url(./image4.jpg);
+  margin-left: 12rem;
+  height: 88vh;
+  padding-top: 5rem;
+  padding-right: 10rem;
+  /* padding-top: 50px; */
+}
+#sidebar-wrapper  {
+  color: white;
+  background-color: black;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  
 }
