@@ -38,10 +38,8 @@ class App extends Component {
         
         <Route  path='/signup' render={props =>(
           <React.Fragment>
-         
          <Headersignup/>
         <Register />
-
           </React.Fragment>
         )} />
         <Route  path='/welcome' render={props =>(
