@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // import { Redirect } from 'react-router-dom'
 // import { history } from 'react-router'
 import firebase from 'firebase';
@@ -45,33 +45,50 @@ window.location='./welcome'
         alert('invalid detail');
     })
 }
+    
+    
+
+    
+    
+
+   
+
+
     render () {
         return (
-            <div >
-                <Headersignup />
-                <div className="login-container d-flex align-items-center justify-content-center">
-                <form className="login-form text-center">
-                    <h4 className="mb-5 text-uppercase loginText">Login</h4>
-                    <div className="form-group">
-                        <input type="email" className="form-control rounded-pill form-control-lg" placeholder="Username"/>
-                    </div>
-                    <div className="form-group">
-                        <input type="password" className="form-control rounded-pill form-control-lg" placeholder="Password"/>
-                    </div>
-                    <div className="forgot-link d-flex align-items-center justify-content-between">
-                        <div className="form-check">
-                            <input type="checkbox" className="form-check-input" id="remember"/>
-                            <label for="remember">Remember Password</label>
+            <div>
+                < Headersignup />
+            <div className="App__Form">
+                <div className="FormTitle">
+                    <h3>Log In</h3>
+                    {/* <a href="#" className="FormTitle__Link">Sign In</a> */}
+                </div>
+                <div className="FormCenter">
+                    <form className="FormFields" >
+                    <div className="FormField">
+                            <label className="FormField__Label" htmlFor="email">E-Mail </label>
+                            <input onChange={this.emailChanged} type="email"   className="FormField__Input" placeholder="Enter your email" name="email"/>
                         </div>
-                        <a href="#">Forgot Password</a>
-                    </div>
-                    <button type="submit"onClick={this.loginClicked} className="btn btn-custom btn-block text-uppercase rounded-pill btn-lg mt-5">Login</button>
-                    <p className="mt-3 font-weight-normal">Don't have an account ? <Link to="/signup"><a href="#"><strong>Register Now</strong></a></Link></p>
-                </form>
 
-            </div>    
-            </div>
+                        <div className="FormField">
+                            <label className="FormField__Label" htmlFor="password">Password</label>
+                            <input onChange={this.passChanged} type="password"  className="FormField__Input" placeholder="Enter your password" name="password"/>
+                        </div>
+
+                        <div className="FormField">
+                            {/* <Link to='/welcome'> */}
+                            <button type='submit' onClick={this.loginClicked}className="FormField__Button">Log In</button> 
+
+                            {/* </Link> */}
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>  
+        </div>
             
+        
         )
     }
 }
