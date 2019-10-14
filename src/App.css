@@ -262,28 +262,31 @@ a:focus{
   display: flex;
   width: 100%;
   align-items: stretch;
-  background-image: url(./color.jpg);
+  background: white;
+  /* background-image: url(./color.jpg); */
   background-size: cover;
 }
 #sidebar {
   min-width: 250px;
   height: 100vh;
   /* max-width: 250px; */
-  background: navy;
+  background: url('./color.jpg');
+  /* background: navy; */
   /* background: #7386D5; */
   color: #fff;
   transition: all 0.3s;
+  background-size: cover;
 }
 /* #sidebar .active {
   margin-left: -250px;
 } */
 #sidebar .sidebar-header {
   padding: 20px;
-  background: navy;
-  /* background: #6d7fcc; */
+  /* background: navy; */
+  background: rgb(192, 23, 80);
   font-weight: bold;
 }
-/* .modal {
+.modal {
   position: absolute;
   top: 10px;
   right: 0px;
@@ -292,4 +295,4 @@ a:focus{
   z-index: 10040;
   overflow: auto;
   overflow-y: auto;
-} */
+}
