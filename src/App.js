@@ -18,6 +18,10 @@ import PrivateRouteLogin from './components/PrivateRouteLogin'
 import CreateCourse from './components/CreateCourse';
 import firebaseConfig from './firebase.config';
 firebase.initializeApp(firebaseConfig);
+
+// import Stories from './components/stories';
+
+
 class App extends Component {
 constructor(props){
   super(props);
@@ -36,6 +40,11 @@ constructor(props){
       }
     })
   }
+
+  // state = {
+  //   Stories,
+  // }
+
   render() {
     return (
       <div className="App">
@@ -88,8 +97,9 @@ constructor(props){
          <Route  path='/Learner' render={props =>(
           <React.Fragment>
             <Headersignup/>
-        <Learner/>
-
+            <Learner />
+        {/* <Learner stories={this.state.Stories}/> */}
+          
           </React.Fragment>
         )} />
 

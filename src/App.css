@@ -1,5 +1,6 @@
 body{
   margin: 0;
+  /* overflow: hidden; */
 }
 .App-header {
   background-color: rgb(14, 167, 78);
@@ -204,24 +205,21 @@ b,strong {
   height: 88vh;
   background-image: url(./color.jpg);
   background-size: cover;
+  color: navy;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 .learner {
   background-image: url(./color.jpg);
- 
-  height: 88vh;
+  text-align: center;
+  font-weight: bold;
+  height: 100%;
   padding-top: 5rem;
   background-size: cover;
-  
+  color: navy;
 }
-#sidebar-wrapper  {
-  color: white;
-  background-color: black;
-}
-ul {
-  display: flex;
-  flex-direction: column;
-  
-}
+
 .signup-form{
   width: 40%;
   margin-left:30%;
@@ -237,3 +235,70 @@ ul {
  }
  
 
+ 
+ .col {
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  width: 50px;
+  height: 250px;
+  background-color: white;
+  background-size: cover;
+  border:0.5px solid rgb(97, 94, 94);
+  border-radius: 2%;
+  box-shadow:5px 10px #bebabac0;
+  background-image: url('silver.jpg');
+}
+.text-left {
+  text-align: left;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+a,
+a:hover,
+a:focus{
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.navbar-btn {
+  box-shadow: none;
+  outline: none!important;
+  border: none;
+}
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  background:white;
+  background-size: cover;
+}
+#sidebar {
+  min-width: 250px;
+  height: 100vh;
+  /* max-width: 250px; */
+  background:url('./color.jpg');
+  /* background: #7386D5; */
+  color: #fff;
+  transition: all 0.3s;
+  background-size:cover;
+}
+/* #sidebar .active {
+  margin-left: -250px;
+} */
+#sidebar .sidebar-header {
+  padding: 20px;
+  background:rgb(192,23,80);
+  /* background: #6d7fcc; */
+  font-weight: bold;
+}
+/* .modal {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  bottom: 0;
+  left: 0;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto;
+} */
