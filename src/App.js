@@ -23,8 +23,10 @@ class App extends Component {
         <Route exact path='/' render={props =>(
           <React.Fragment>
             <div className="try">
-            <Header/>
-            <Homepage />
+              <div className="try2">
+                <Header/>
+                <Homepage />
+              </div>
             </div>
             <HowWeWork />
           </React.Fragment>
