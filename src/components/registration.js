@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 // import { BrowserRouter as Router,Route} from 'react-router-dom';
 // import { Link } from 'react-router-dom';
-// import { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+// import Welcome  from './welcomePage'; 
 import firebase from 'firebase';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 class Register extends Component {
@@ -26,11 +27,11 @@ componentDidMount=()=>{
 }
     render () {
         return (
-            <div className="signup-form">
+            <div className='signup-form'>
                 {this.state.isSignedIn ? (
-                    // <Navbar />
-                    <h1>sign up here</h1>
-                    //
+                    <Redirect to='./welcome'></Redirect>
+                   
+                    
                     ):(
                         <StyledFirebaseAuth
                         uiConfig={this.uiConfig}

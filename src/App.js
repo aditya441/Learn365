@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route ,Switch} from 'react-router-dom';
 
 import './App.css';
 import Register from './components/registration'
@@ -13,13 +13,43 @@ import Homepage from './components/Homepage';
 import HowWeWork from './components/howWeWork';
 import Headersignup from './components/HeadenSignup';
 import firebase from 'firebase';
+import PrivateRoute from './components/PrivateRoute';
+import PrivateRouteLogin from './components/PrivateRouteLogin'
+import CreateCourse from './components/CreateCourse';
 import firebaseConfig from './firebase.config';
 firebase.initializeApp(firebaseConfig);
+
+// import Stories from './components/stories';
+
+
 class App extends Component {
+constructor(props){
+  super(props);
+  this.state={
+    authorized:true
+  }
+}
+
+  componentDidMount(){
+    firebase.auth().onAuthStateChanged(user=>{
+      if(user){
+        console.log(user);
+        this.setState({authorized:true})
+      }else{
+        this.setState({authorized:false})
+      }
+    })
+  }
+
+  // state = {
+  //   Stories,
+  // }
+
   render() {
     return (
       <div className="App">
         <Router>
+          <Switch>
         <Route exact path='/' render={props =>(
           <React.Fragment>
             <div className="try">
@@ -32,14 +62,15 @@ class App extends Component {
           </React.Fragment>
         )} />
         
-        <Route exact path='/login' render={props =>(
+        <PrivateRouteLogin exact path='/login' authed={this.state.authorized} component={Login} />
+         {/* render={props =>(
           <React.Fragment>
            
-         <Headersignup/>
-              <Login />
+         {/* <Headersignup/> */}
+              {/* <Login /> */}
 
-          </React.Fragment>
-        )} />
+          {/* </React.Fragment> */}
+        {/* )} /> */}
         
         <Route  path='/signup' render={props =>(
           <React.Fragment>
@@ -47,18 +78,28 @@ class App extends Component {
         <Register />
           </React.Fragment>
         )} />
-        <Route  path='/welcome' render={props =>(
+        <PrivateRoute  path='/welcome' authed={this.state.authorized} component={Welcome} /> 
+         {/* render={props =>(
           <React.Fragment>
             <Headersignup />
         <Welcome/>
+
+          </React.Fragment>
+        )} /> */}
+        <Route exact path='/createcourse' 
+        render={props =>(
+          <React.Fragment>
+            <Headersignup/>
+        <CreateCourse />
 
           </React.Fragment>
         )} />
          <Route  path='/Learner' render={props =>(
           <React.Fragment>
             <Headersignup/>
-        <Learner/>
-
+            <Learner />
+        {/* <Learner stories={this.state.Stories}/> */}
+          
           </React.Fragment>
         )} />
 
@@ -77,7 +118,7 @@ class App extends Component {
 
           </React.Fragment>
         )} />
-        
+        </Switch>
        </Router>
        
       </div>

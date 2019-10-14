@@ -13,20 +13,20 @@ export default function HeadenSignup() {
          
           <ul className="nav navbar-nav ml-auto">
             <li className="nav-item">
-              <Link to='/signup'>
-              <a className="nav-link" href="#">
+              <Link to='/signup'
+               className="nav-link" href="#">
                   <span className="fas fa-user"></span> Sign Up
-                  </a>
+                  
               </Link>  
             </li>
             <li className="nav-item">
-                <Link to='/login'>
-              <a className=" nav-link" href="#"><span className="fas fa-sign-in-alt"></span> Login</a>
+                <Link to='/login'
+              className=" nav-link" href="#"><span className="fas fa-sign-in-alt"></span> Login 
                 </Link>
             </li>
             <li className="nav-item">
-                <Link to='/'>
-              <a onClick={()=> firebase.auth().signOut()} className="nav-link" href="#"><span className="fas fa-sign-in-alt"></span> Sign Out</a>
+                <Link to='/'
+               onClick={()=> firebase.auth().signOut()} className="nav-link" href="#"><span className="fas fa-sign-in-alt"></span> Sign Out
               </Link>
             </li>
           </ul>

@@ -1,10 +1,55 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+// import { Redirect } from 'react-router-dom'
+// import { history } from 'react-router'
+import firebase from 'firebase';
+import Headersignup from './HeadenSignup';
+// import Welcome from './welcomePage';
+// import firebaseConfig from '../firebase.config';
+// firebase.initializeApp(firebaseConfig);
 class Login extends Component {
+constructor(props){
+    super(props)
+
+    this.state={
+        email:'',
+        pass:'',
+        
+        
+    }
+    this.emailChanged=this.emailChanged.bind(this);
+    this.passChanged=this.passChanged.bind(this);
+    this.loginClicked=this.loginClicked.bind(this);
+}
+    emailChanged=(e)=>{
+
+        this.setState({email: e.target.value})
+    }
+    passChanged=(e)=>{
+
+        this.setState({pass: e.target.value})
+    }
+    
+    
+
+loginClicked=(e)=>{
+    e.preventDefault();
+    firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.pass).then((u)=>{
+ console.log(u.user.displayName);
+        console.log(this.props.history);
+window.location='./welcome'
+
+
+    }).catch((error)=>{
+        console.log(error)
+        alert('invalid detail');
+    })
+}
     render () {
         return (
-            <div className="login-container d-flex align-items-center justify-content-center">
+            <div >
+                <Headersignup />
+                <div className="login-container d-flex align-items-center justify-content-center">
                 <form className="login-form text-center">
                     <h4 className="mb-5 text-uppercase loginText">Login</h4>
                     <div className="form-group">
@@ -20,44 +65,13 @@ class Login extends Component {
                         </div>
                         <a href="#">Forgot Password</a>
                     </div>
-                    <button type="submit" className="btn btn-custom btn-block text-uppercase rounded-pill btn-lg mt-5">Login</button>
+                    <button type="submit"onClick={this.loginClicked} className="btn btn-custom btn-block text-uppercase rounded-pill btn-lg mt-5">Login</button>
                     <p className="mt-3 font-weight-normal">Don't have an account ? <Link to="/signup"><a href="#"><strong>Register Now</strong></a></Link></p>
                 </form>
 
+            </div>    
             </div>
-        //     <div>
-        //     <div className="App__Form">
-        //         <div className="FormTitle">
-        //             <h3>Sign In</h3>
-        //             {/* <a href="#" className="FormTitle__Link">Sign In</a> */}
-        //         </div>
-        //         <div className="FormCenter">
-        //             <form className="FormFields" onSubmit={this.handleSubmit}>
-        //             <div className="FormField">
-        //                     <label className="FormField__Label" htmlFor="email">E-Mail</label>
-        //                     <input type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email"/>
-        //                 </div>
-
-        //                 <div className="FormField">
-        //                     <label className="FormField__Label" htmlFor="password">Password</label>
-        //                     <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password"/>
-        //                 </div>
-
-        //                 <div className="FormField">
-        //                     <Link to='/welcome'>
-        //                     <button className="FormField__Button">Sign In</button> 
-
-        //                     </Link>
-        //                 </div>
-
-        //             </form>
-        //         </div>
-
-        //     </div>  
-        // </div>
-
             
-        
         )
     }
 }

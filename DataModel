@@ -1,0 +1,20 @@
+courses:{
+    course_id
+    course_name
+    course_description
+
+}
+sections:{
+    section_id:
+    section_name:
+    videos:[
+        {
+            video_id:
+            video_name:
+            video_url:
+        }
+    ]
+
+}
+
+
