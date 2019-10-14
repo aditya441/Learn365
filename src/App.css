@@ -131,9 +131,9 @@ b,strong {
 .how-learn365-works__text .how-learn365-works-subText {
   color: white;
 }
-.how-learn365-works__col:last-child {
+/* .how-learn365-works__col:last-child {
   /* padding-right: 30px; */
-}
+
 .App-intro {
   font-size: large;
 }
@@ -309,7 +309,7 @@ b,strong {
   border:0.5px solid rgb(97, 94, 94);
   border-radius: 2%;
   box-shadow:5px 10px #bebabac0;
-  background-image: url('silver.jpg');
+  background-image: url('white.jpg');
 }
 .text-left {
   text-align: left;

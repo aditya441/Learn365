@@ -60,7 +60,7 @@ class CreateCourse extends Component {
       <div className='course'>
      
         <div className="course-title">
-          <label htmlFor="" className='col-xs-2 course-name'>Give a name of your Course</label>{" "}
+          <label htmlFor="" className='col-xs-2 course-name'>Course Details</label>{" "}
           <input type="text" name='courseName' onChange={this.onChange} className='form-control col-xs-6 course-input'  placeholder="Enter course title" />
           <input type="text" name='courseDesc'  onChange={this.onChange} className='form-control col-xs-6 course-input'  placeholder="Description of course" />
           <button
