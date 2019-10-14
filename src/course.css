@@ -4,12 +4,18 @@
     justify-content: center;
     padding:50px;
     /* flex-direction: column; */
+    /* background-image: url(./color.jpg); */
+    background-size: cover;
 }
 
 .course{
-    /* border:2px solid black; */
+    /* border:0.5px solid black; */
     width:60%;
+    background:white;
+    box-shadow: 3px 3px 3px 3px #c76071;
+    border-radius: 2px;
     flex-direction: column;
+    padding:15px;
     
 
 }
@@ -62,4 +68,7 @@
     /* font-weight: 300; */
     /* font-size: 15px; */
     color: #29303b
+}
+.submit{
+    margin-left: 40%;
 }
