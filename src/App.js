@@ -15,7 +15,16 @@ import Headersignup from './components/HeadenSignup';
 import firebase from 'firebase';
 import firebaseConfig from './firebase.config';
 firebase.initializeApp(firebaseConfig);
+
+// import Stories from './components/stories';
+
+
 class App extends Component {
+
+  // state = {
+  //   Stories,
+  // }
+
   render() {
     return (
       <div className="App">
@@ -57,8 +66,9 @@ class App extends Component {
          <Route  path='/Learner' render={props =>(
           <React.Fragment>
             <Headersignup/>
-        <Learner/>
-
+            <Learner />
+        {/* <Learner stories={this.state.Stories}/> */}
+          
           </React.Fragment>
         )} />
 
