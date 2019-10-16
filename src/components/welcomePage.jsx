@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import Headersignup from './HeadenSignup';
 class Welcome extends Component{
 
     render(){
         return(
+            <div>
+                <Headersignup />
             <div className="welcome">
                     <h2>Welcome!</h2>
                     <h4>Educating all students to achieve today and tomorrow in a global community and economy.</h4> 
@@ -12,8 +15,8 @@ class Welcome extends Component{
                         <h3>Become an Instructor</h3>
                         <p>Teach what you Love.Learn365 gives you the tools to create an online course.</p> 
                         <div className="FormField">
-                            <Link to='/Learner'>
-                            <button type="button" class="btn btn-danger">Start Teaching</button>
+                            <Link to='/createcourse'>
+                            <button type="button" className="btn btn-danger">Start Teaching</button>
                             </Link>
                         </div>
                         
@@ -22,14 +25,15 @@ class Welcome extends Component{
                         <h2>Be a Learner</h2>
                         <p>Get unlimited access to the 100's of courses that Learn365 provides you.</p>
                         <div className="FormField">
-                            <Link to='/Learner'>
-                            <button type="button" class="btn btn-danger">Start Leaning</button>
+                            <Link to='/Courses'>
+                            <button type="button" className="btn btn-danger">Start Leaning</button>
                             </Link>
                         </div>
                         
                     </div>
                 </div>
                 
+            </div>
             </div>
         )
     }

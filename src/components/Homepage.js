@@ -8,9 +8,9 @@ export default function Homepage() {
                     <div className="tagline">
                     Learn on your schedule
                     </div>
-                    <div className="tagline-text">
+                    <p className="tagline-text">
                         Study any topic, anytime. Choose from thousands of expert-led courses now.
-                    </div>
+                    </p>
                 </div>
             </div>           
         </div>

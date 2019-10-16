@@ -1,11 +1,11 @@
 import React,{Component} from 'react';
 import { Link } from 'react-router-dom';
-import firebase from 'firebase';
+// import firebase from 'firebase';
 class Header extends Component {
 
 render(){
     return(
-        <nav className="headerHomePage navbar navbar-expand-md navbar-dark">
+        <nav className="headerHomePage navbar navbar-expand-md navbar-dark sticky-top">
         <a className="navbar-brand" href="#">Learn365</a>
         <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
           <span className="navbar-toggler-icon"></span>
@@ -14,22 +14,22 @@ render(){
          
           <ul className="nav navbar-nav ml-auto">
             <li className="nav-item">
-              <Link to='/signup'>
-              <a className="nav-link" href="#">
+              <Link to='/signup'
+               className="nav-link" href="#">
                   <span className="fas fa-user"></span> Sign Up
-                  </a>
+                  
               </Link>  
             </li>
             <li className="nav-item">
-                <Link to='/login'>
-              <a className=" nav-link" href="#"><span className="fas fa-sign-in-alt"></span> Login</a>
+                <Link to='/login'
+              className=" nav-link" href="#"><span className="fas fa-sign-in-alt"></span> Login
                 </Link>
             </li>
-            <li className="nav-item">
-                <Link to='/'>
-              <a onClick={()=> firebase.auth().signOut()} className="nav-link" href="#"><span className="fas fa-sign-in-alt"></span> Sign Out</a>
+            {/* <li className="nav-item">
+                <Link to='/'
+               onClick={()=> firebase.auth().signOut()} className="nav-link" href="#"><span className="fas fa-sign-in-alt"></span> Sign Out
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </nav>
