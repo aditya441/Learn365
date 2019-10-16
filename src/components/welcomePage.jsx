@@ -31,7 +31,7 @@ class Welcome extends Component{
                         <h2>Be a Learner</h2>
                         <p>Get unlimited access to the 100's of courses that Learn365 provides you.</p>
                         <div className="FormField">
-                            <Link to='/Learner'>
+                            <Link to='/Courses'>
                             <button type="button" className="btn btn-danger">Start Leaning</button>
                             </Link>
                         </div>

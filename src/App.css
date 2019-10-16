@@ -234,7 +234,7 @@ b,strong {
   font-family:open sans,helvetica neue,Helvetica,Arial,sans-serif;
 }
 .learner {
-  background-image: url(./color.jpg);
+  background: white;
   text-align: center;
   font-weight: bold;
   height: 100%;
@@ -312,9 +312,8 @@ b,strong {
   color: black;
   text-align: center;
   font-weight: bold;
-  width: 50px;
-  height: 250px;
-  background-color: white;
+
+  /* background-color: white; */
   background-size: cover;
   border:0.5px solid rgb(97, 94, 94);
   border-radius: 2%;
@@ -349,7 +348,8 @@ a:focus{
   min-width: 250px;
   height: 100vh;
   /* max-width: 250px; */
-  background:url('./color.jpg');
+  background: rgb(117, 41, 64);
+  /* background:url('./color.jpg'); */
   /* background: #7386D5; */
   color: #fff;
   transition: all 0.3s;
@@ -360,7 +360,8 @@ a:focus{
 } */
 #sidebar .sidebar-header {
   padding: 20px;
-  background:rgb(192,23,80);
+  background:rgb(117, 41, 64);
+  /* background:rgb(192,23,80); */
   /* background: #6d7fcc; */
   font-weight: bold;
 }
@@ -381,3 +382,45 @@ a:focus{
 .userDummyPic{
   height: 30px;
 }
+
+
+.shadow {
+  margin: 5rem;
+  width: 80%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:#f5fdff;
+}
+/* new css */
+.vds-color--green {
+  color: #da3131!important;
+}
+.vds-icon--lg {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+.vds-icon {
+  height: 2.5rem;
+  width: 2rem;
+  display: inline-block;
+  fill: currentColor;
+  line-height: 0;
+  stroke: currentColor;
+  vertical-align: middle;
+}
+*, :after, :before {
+  box-sizing: inherit;
+}
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+i {
+  font-style: italic;
+}
+.btn1 {
+  position: relative;
+  left: 800px;
+  top: -60px;
+  padding: 5px;
+}
+
