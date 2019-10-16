@@ -1,0 +1,33 @@
+[
+    {
+        "course_id": "1",
+        "quiz_id":"123",
+        "questions":[
+            {
+                "question_id":"1",
+                "question":"Best e-learning website to learn?",
+                "options":["Udacity","Udemy","CourseEra","Learn365"],
+                "answer":"Learn365"
+            },
+            {
+                "question_id":"2",
+                "question":"Best place to work on planet earth ?",
+                "options":["Mountblue","Google","Facebook","Microsoft"],
+                "answer":"Mountblue"
+            }, 
+            {
+                "question_id":"3",
+                "question":"Capital of India?",
+                "options":["Delhi","Mumbai","Bengaluru","Chennai"],
+                "answer":"Delhi"
+            },
+            {
+                "question_id":"4",
+                "question":"Is java pure Object oriented?",
+                "options":["Yes","No","Don't know","teeno"],
+                "answer":"No"
+            }
+
+        ]
+    }
+  ]  
