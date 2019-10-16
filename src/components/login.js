@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 // import { Redirect } from 'react-router-dom'
 // import { history } from 'react-router'
 import firebase from 'firebase';
-import Headersignup from './HeadenSignup';
+// import Headersignup from './HeaderSignup';
+import HeaderAuth from './HeaderAuth'
 // import Welcome from './welcomePage';
 // import firebaseConfig from '../firebase.config';
 // firebase.initializeApp(firebaseConfig);
@@ -57,7 +58,7 @@ window.location='./welcome'
     render () {
         return (
             <div >
-                <Headersignup />
+                <HeaderAuth />
                 <div className="login-container d-flex align-items-center justify-content-center">
                 <form className="login-form text-center">
                     <h4 className="mb-5 text-uppercase loginText">Login</h4>
@@ -70,13 +71,13 @@ window.location='./welcome'
                     <div className="forgot-link d-flex align-items-center justify-content-between">
                         <div className="form-check">
                             <input type="checkbox" className="form-check-input" id="remember"/>
-                            <label for="remember">Remember Password</label>
+                            <label htmlFor="remember">Remember Password</label>
                         </div>
 
                         <a href="#">Forgot Password</a>
                    </div>
                    <button type="submit"onClick={this.loginClicked} className="btn btn-custom btn-block text-uppercase rounded-pill btn-lg mt-5">Login</button>
-                   <p className="mt-3 font-weight-normal">Don't have an account ? <Link to="/signup"><a href="#"><strong>Register Now</strong></a></Link></p>
+                   <p className="mt-3 font-weight-normal">Don't have an account ? <Link to="/signup"><strong>Register Now</strong></Link></p>
                </form>
            </div>
            </div>

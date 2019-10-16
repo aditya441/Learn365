@@ -11,12 +11,14 @@ import Video from './components/video';
 import Header from './components/Header';
 import Homepage from './components/Homepage';
 import HowWeWork from './components/howWeWork';
-import Headersignup from './components/HeadenSignup';
+import HeaderAuth from './components/HeaderAuth';
+import Headersignup from './components/HeaderSignup';
 import firebase from 'firebase';
 import PrivateRoute from './components/PrivateRoute';
 import PrivateRouteLogin from './components/PrivateRouteLogin'
 import CreateCourse from './components/CreateCourse';
 import firebaseConfig from './firebase.config';
+import CreateSection from './components/CreateSection';
 firebase.initializeApp(firebaseConfig);
 
 // import Stories from './components/stories';
@@ -26,26 +28,28 @@ class App extends Component {
 constructor(props){
   super(props);
   this.state={
-    authorized:true
+    authorized:true,
+    user:''
   }
 }
 
   componentDidMount(){
     firebase.auth().onAuthStateChanged(user=>{
       if(user){
-        console.log(user);
+        this.setState({user:user})
+        // console.log(user);
         this.setState({authorized:true})
       }else{
         this.setState({authorized:false})
       }
     })
   }
-
   // state = {
-  //   Stories,
-  // }
-
-  render() {
+    //   Stories,
+    // }
+    
+    render() {
+      // console.log(this.state.user)
     return (
       <div className="App">
         <Router>
@@ -63,40 +67,35 @@ constructor(props){
         )} />
         
         <PrivateRouteLogin exact path='/login' authed={this.state.authorized} component={Login} />
-         {/* render={props =>(
-          <React.Fragment>
-           
-         {/* <Headersignup/> */}
-              {/* <Login /> */}
-
-          {/* </React.Fragment> */}
-        {/* )} /> */}
+         
         
         <Route  path='/signup' render={props =>(
           <React.Fragment>
-         <Headersignup/>
+         <HeaderAuth/>
         <Register />
           </React.Fragment>
         )} />
-        <PrivateRoute  path='/welcome' authed={this.state.authorized} component={Welcome} /> 
-         {/* render={props =>(
-          <React.Fragment>
-            <Headersignup />
-        <Welcome/>
-
-          </React.Fragment>
-        )} /> */}
-        <Route exact path='/createcourse' 
+        <PrivateRoute  path='/welcome' authed={this.state.authorized} 
+        // component={Welcome} /> 
+        component={() => <Welcome user={this.state.user}  />} />
+        <Route exact path='/:user/createcourse' 
         render={props =>(
           <React.Fragment>
-            <Headersignup/>
-        <CreateCourse />
+            <Headersignup {...props} name={this.state.user}/>
+        <CreateCourse {...props} userId={this.state.user}/>
+
+          </React.Fragment>
+        )} />
+        <Route path='/:userId/course/:courseId/sections' render={props =>(
+          <React.Fragment>
+            <Headersignup {...props} name={this.state.user}/>
+        <CreateSection {...props} userId={this.state.user}/>
 
           </React.Fragment>
         )} />
          <Route  path='/Learner' render={props =>(
           <React.Fragment>
-            <Headersignup/>
+            <Headersignup {...props} name={this.state.user} />
             <Learner />
         {/* <Learner stories={this.state.Stories}/> */}
           
