@@ -19,6 +19,8 @@ class AddVedio extends Component {
   render() {
     return (
       <div>
+          {/* <form onSubmit={this.props.addClicked}> */}
+
         <div className="vedio-detail">
           <div className="form-inline vedio-title">
             <label htmlFor="" className="col-xs-2 vedio-title">
@@ -26,8 +28,8 @@ class AddVedio extends Component {
             </label>{" "}
             <input
                 value={this.props.value.vedioName}
-              onChange={this.props.handleChanged}
-            //   {() => {
+              onChange={this.props.titleChanged}
+              //   {() => {
             // this.props.handleChange(this.props.vedioName);
             //   }}
               type="text"
@@ -35,7 +37,7 @@ class AddVedio extends Component {
               name="vedioName"
               placeholder="Enter video title"
               required
-            />
+              />
           </div>
           <div className="form-inline">
             <label htmlFor="" className="col-xs-2 vedio-url">
@@ -44,18 +46,27 @@ class AddVedio extends Component {
             <input
                 
               value={this.props.value.vedioUrl}
-              onChange={this.props.handleChanged}
+              onChange={this.props.urlChanged}
             //   {()=>{
             //       this.props.handleChange(this.props.vedioUrl);
             //   }}
-              type="text"
-              className="form-control col-xs-6 course-input"
-              name="vedioUrl"
-              placeholder="Enter video url"
+            type="text"
+            className="form-control col-xs-6 course-input"
+            name="vedioUrl"
+            placeholder="Enter video url"
               required
-            />
+              />
           </div>
+          <button
+              onClick={this.props.addClicked}
+              type="submit"
+              className="btn btn-danger continue"
+              >
+              {" "}
+              add
+            </button>
         </div>
+              {/* </form> */}
       </div>
     );
   }

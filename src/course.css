@@ -86,3 +86,24 @@ margin-bottom: 20px;
     display: flex;
     
 }
+.courseName{
+    font-size: 2em;
+    margin-left: 8em;
+    margin-bottom: 20px;
+    /* border:1px solid red; */
+    border-radius: 3px;
+    box-shadow:2px 2px 2px 2px #c76071;
+    margin-right: 6.9em;
+    padding:10px;
+    
+    color:rgb(61, 12, 45) ;
+
+}
+.course_name{
+    /* border-bottom: 1px solid ; */
+    box-shadow: 1px 1px 1px 1px #c76071
+    
+}
+.sections{
+    margin-left:20px;
+}
