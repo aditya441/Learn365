@@ -1,0 +1,173 @@
+
+
+
+ [
+    {
+        "course_id": "1",
+        "title": "JavaScript Promises",
+        "description": "Learn how to simplify asynchronous work with Native JavaScript Promises!",
+        "sections": [
+            {
+               "section_id": 1,
+               "name": "Lesson 1: Creating Promises",
+               "description": "Learn what a promise is,how it makes writing asynchronous JavaScript simpler and how to handle errors.",
+               "videos": [
+                   {
+                       "video_id": 1,
+                       "name": "Course Introduction",
+                       "url": "",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                       "video_id": 2,
+                       "name": "Callbacks vs Promises",
+                       "url": "",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                       "video_id": 3,
+                       "name": "Callbacks vs Thens",
+                       "url": "",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                    "video_id": 4,
+                    "name": "Async Scenarios",
+                    "url": "",
+                    "status": "completed/ not completed/ current"
+                },
+                {
+                    "video_id": 5,
+                    "name": "Write Your First Promise",
+                    "url": "",
+                    "status": "completed/ not completed/ current"
+                }
+                
+               ]
+            },
+            {
+               "section_id": 2,
+               "name": "Lesson 2: Chaining Promises",
+               "description": "Create sequences of asynchronous work by chaining promises together and dive into more advanced error hadnling.",
+               "videos": [
+                   {
+                       "video_id": 1,
+                       "name": "Fetch and Show First Planet",
+                       "url": "",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                       "video_id": 2,
+                       "name": "Error Handling Strategies",
+                       "url": "",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                       "video_id": 3,
+                       "name": "Array Methods and Promises",
+                       "url": "",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                       "video_id": 4,
+                       "name": "Promises with .forEach",
+                       "url": "",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                    "video_id": 5,
+                    "name": "Promises with .map",
+                    "url": "",
+                    "status": "completed/ not completed/ current"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "course_id": "2",
+        "title": "Introduction to jQuery",
+        "description": "Learn how to access and modify the DOM with  ease using jQuery!",
+        "sections": [
+            {
+               "section_id": 1,
+               "name": "Lesson 1: The Basics: the DOM,$,and Selectors",
+               "videos": [
+                   {
+                       "video_id": 1,
+                       "name": "Course Introduction",
+                       "url": "",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                       "video_id": 2,
+                       "name": "Why does jQuery exist?",
+                       "url": "",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                       "video_id": 3,
+                       "name": "How to use the $",
+                       "url": "",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                    "video_id": 4,
+                    "name": "How is jQuery included in a Page?",
+                    "url": "",
+                    "status": "completed/ not completed/ current"
+                },
+                {
+                    "video_id": 5,
+                    "name": "Family Tree Revisited",
+                    "url": "",
+                    "status": "completed/ not completed/ current"
+                }
+                
+               ]
+            },
+            {
+               "section_id": 2,
+               "name": "Lesson 2: The Tricks: DOM Manipulation",
+               "videos": [
+                   {
+                       "video_id": 1,
+                       "name": "jQuery Documentation and You",
+                       "url": "",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                       "video_id": 2,
+                       "name": "pulling HTML and Text",
+                       "url": "",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                       "video_id": 3,
+                       "name": "Adding DOM elements",
+                       "url": "",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                       "video_id": 4,
+                       "name": "Appending Child elements",
+                       "url": "",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                    "video_id": 5,
+                    "name": "$(function)",
+                    "url": "",
+                    "status": "completed/ not completed/ current"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "course_id": 3,
+        "title": "Version control with Git",
+        "description": "This course covers the essentials of using the version control system Git." 
+    }
+]
+

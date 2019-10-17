@@ -16,6 +16,9 @@ body{
   background-color: rgba(20, 12, 75, 0.4);
   /* height: 12vh; */
 }
+.headerAuth{
+  background: linear-gradient(-45deg,#EC5252 0%,#6E1A52 100%);
+}
 .headerHomePageSignup {
   background: linear-gradient(-45deg,#EC5252 0%,#6E1A52 100%);
   /* height: 12vh; */
@@ -131,9 +134,9 @@ b,strong {
 .how-learn365-works__text .how-learn365-works-subText {
   color: white;
 }
-.how-learn365-works__col:last-child {
+/* .how-learn365-works__col:last-child {
   /* padding-right: 30px; */
-}
+
 .App-intro {
   font-size: large;
 }
@@ -194,6 +197,9 @@ b,strong {
   height: 250px;
   background-image: url(./gudone.jpg);
   background-size: cover;
+  border-radius: 3px;
+  box-shadow:15px 15px 15px rgba(236, 82, 115, 0.679);
+  
 }
 .wf2 {
   color: white;
@@ -203,6 +209,8 @@ b,strong {
   height: 250px;
   background-image: url(./instructor.jpg);
   background-size: cover;
+  border-radius: 3px;
+  box-shadow:15px 15px 15px rgba(236, 82, 115, 0.679)
 }
 .ns {
   background-color: silver;
@@ -216,15 +224,17 @@ b,strong {
 .welcome {
   padding-top: 5rem;
   height: 88vh;
-  background-image: url(./color.jpg);
+  background-image: white;
+  /* url(./color.jpg); */
   background-size: cover;
   color: navy;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   font-weight: bold;
+  font-family:open sans,helvetica neue,Helvetica,Arial,sans-serif;
 }
 .learner {
-  background-image: url(./color.jpg);
+  background: white;
   text-align: center;
   font-weight: bold;
   height: 100%;
@@ -237,9 +247,9 @@ b,strong {
   width: 40%;
   margin-left:30%;
   margin-top: 3em;
-  border:0.5px solid rgb(97, 94, 94);
+  border:0.5px solid #e7c8c8;
   border-radius: 2%;
-  box-shadow:5px 10px #bebabac0;
+  box-shadow:20px 20px 15px #e7c8c8;
   padding: 50px;
 }
  
@@ -302,14 +312,13 @@ b,strong {
   color: black;
   text-align: center;
   font-weight: bold;
-  width: 50px;
-  height: 250px;
-  background-color: white;
+
+  /* background-color: white; */
   background-size: cover;
   border:0.5px solid rgb(97, 94, 94);
   border-radius: 2%;
   box-shadow:5px 10px #bebabac0;
-  background-image: url('silver.jpg');
+  background-image: url('white.jpg');
 }
 .text-left {
   text-align: left;
@@ -339,7 +348,10 @@ a:focus{
   min-width: 250px;
   height: 100vh;
   /* max-width: 250px; */
-  background:url('./color.jpg');
+  background: rgb(117, 41, 64);
+  /* background:  #242c35; */
+   /* background:  #191d22; */
+  /* background:url('./color.jpg'); */
   /* background: #7386D5; */
   color: #fff;
   transition: all 0.3s;
@@ -350,9 +362,12 @@ a:focus{
 } */
 #sidebar .sidebar-header {
   padding: 20px;
-  background:rgb(192,23,80);
+  background:rgb(117, 41, 64);
+  /* background: #11161a; */
+  /* background:rgb(192,23,80); */
   /* background: #6d7fcc; */
   font-weight: bold;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
 }
 /* .modal {
   position: absolute;
@@ -430,22 +445,77 @@ a:focus{
   position: absolute;
   width: 1024px;
   font-size: 3em;  
-  top: 250px;
+  top: 50px;
   text-align: center;
+  left: 3em;
+  /* border: 2px solid #6E1A52; */
+  font-style: italic;
+  font-family: fantasy
 }
 
 .playBtn {
   position: absolute;
   font-size: 1.4em;
-  padding: 10px;
-  top: 350px;
+  padding: 2px 18px;
+  top: 150px;
   /* background-color: rgb(46, 182, 46); */
-  background-color: #6E1A52;
+  /* background-color: #6E1A52; */
+  /* background-color: white; */
   color: rgb(255, 255, 255);
-  width: 150px;
+  /* color: #11161a; */
+  width: 250px;
   left: 0px;
   right: 0px;
   margin: auto;
   outline: none;
   cursor: pointer;
 }
+.userName{
+  color:white;
+}
+.userDummyPic{
+  height: 30px;
+}
+
+
+.shadow {
+  margin: 5rem;
+  width: 80%;
+  font-family: Arial, Helvetica, sans-serif;
+  /* background-color:#f5fdff; */
+  background: white;
+}
+/* new css */
+.vds-color--green {
+  color: #da3131!important;
+}
+.vds-icon--lg {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+.vds-icon {
+  height: 2.5rem;
+  width: 2rem;
+  display: inline-block;
+  fill: currentColor;
+  line-height: 0;
+  stroke: currentColor;
+  vertical-align: middle;
+}
+*, :after, :before {
+  box-sizing: inherit;
+}
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+i {
+  font-style: italic;
+}
+.btn1 {
+  position: relative;
+  left: 800px;
+  top: -60px;
+  padding: 0.2em 2em;
+}
+

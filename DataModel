@@ -1,10 +1,13 @@
-courses:{
-    course_id
-    course_name
-    course_description
+courses{
+    userId:
+    course_id:
+    course_name:
+    course_description:
 
 }
+
 sections:{
+    courseId:
     section_id:
     section_name:
     videos:[

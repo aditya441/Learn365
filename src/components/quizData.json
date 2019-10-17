@@ -20,14 +20,7 @@
                 "question":"Capital of India?",
                 "options":["Delhi","Mumbai","Bengaluru","Chennai"],
                 "answer":"Delhi"
-            },
-            {
-                "question_id":"4",
-                "question":"Is java pure Object oriented?",
-                "options":["Yes","No","Don't know","teeno"],
-                "answer":"No"
             }
-
         ]
     }
   ]  
