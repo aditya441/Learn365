@@ -197,6 +197,13 @@ class Sections extends Component {
               </a>
             </li>
           </ol>
+          <Link to="/quiz">
+          <button className="btn btn-link  quizing">Take Quiz</button>
+          </Link>
+
+          {/* <Link to="/quiz">
+          <button className="btn btn-primary  quizi">Take Quiz</button>
+          </Link> */}
         </nav>
 
         <div className="embed-responsive embed-responsive-16by9">
