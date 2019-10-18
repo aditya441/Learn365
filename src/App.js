@@ -18,8 +18,10 @@ import CreateCourse from './components/CreateCourse';
 import firebaseConfig from './firebase.config';
 firebase.initializeApp(firebaseConfig);
 import courseData from './components/coursesData';
-import Video2 from './components/video2';
-import Video1 from './components/video1';
+import Videos from './components/videos';
+import Single from './components/singleCourse';
+
+
 
 class App extends Component {
   constructor(props){
@@ -79,28 +81,20 @@ class App extends Component {
               </React.Fragment>
             )} />
             
-                 <Route  path='/courseId/Sections' render={props =>(
+                 <Route  path='/:courseId/Sections' render={props =>(
                   <React.Fragment>
                     <Headersignup />
-                  <Sections/>
-                      
+                    <Single data={this.state.courseData} {...props}/>  
                   </React.Fragment>
                 )} />
-                <Route  path='/Course' render={props =>(
+
+                <Route  path='/:courseId/:videoId/Sections' render={props =>(
                   <React.Fragment>
-                    <Headersignup />
-                  <Video1/>
-                      
+                  <Headersignup />
+                  <Single data={this.state.courseData} {...props}/>
                   </React.Fragment>
                 )} />  
-                <Route  path='/Coursess' render={props =>(
-                  <React.Fragment>
-                    <Headersignup />
-                  <Video2/>
-                      
-                  </React.Fragment>
-                )} /> 
-        
+                
           </Switch>
         </Router>
        

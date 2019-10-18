@@ -3,81 +3,83 @@
 
  [
     {
-        "course_id": "1",
+        "course_id": "fekALDR",
         "title": "JavaScript Promises",
         "description": "Learn how to simplify asynchronous work with Native JavaScript Promises!",
         "sections": [
             {
                "section_id": 1,
-               "name": "Lesson 1: Creating Promises",
+               "name": "1. Creating Promises",
+               "menu": "ackda",
                "description": "Learn what a promise is,how it makes writing asynchronous JavaScript simpler and how to handle errors.",
                "videos": [
                    {
                        "video_id": 1,
                        "name": "Course Introduction",
-                       "url": "",
+                       "url": "https://www.youtube.com/embed/FN5Qi2GnyxM",
                        "status": "completed/ not completed/ current"
                    },
                    {
                        "video_id": 2,
                        "name": "Callbacks vs Promises",
-                       "url": "",
+                       "url": "https://www.youtube.com/embed/9nwPenviboM",
                        "status": "completed/ not completed/ current"
                    },
                    {
                        "video_id": 3,
                        "name": "Callbacks vs Thens",
-                       "url": "",
+                       "url": "https://www.youtube.com/embed/RR0MoEoHb9U",
                        "status": "completed/ not completed/ current"
                    },
                    {
                     "video_id": 4,
                     "name": "Async Scenarios",
-                    "url": "",
+                    "url": "https://www.youtube.com/embed/uTp1DPyYOSw",
                     "status": "completed/ not completed/ current"
                 },
                 {
                     "video_id": 5,
                     "name": "Write Your First Promise",
-                    "url": "",
+                    "url": "https://www.youtube.com/embed/8CxHueAZM3s",
                     "status": "completed/ not completed/ current"
                 }
                 
                ]
             },
-            {
+            {   
                "section_id": 2,
-               "name": "Lesson 2: Chaining Promises",
+               "name": "2. Chaining Promises",
+               "menu": "ackpewf",
                "description": "Create sequences of asynchronous work by chaining promises together and dive into more advanced error hadnling.",
                "videos": [
                    {
-                       "video_id": 1,
+                       "video_id": 6,
                        "name": "Fetch and Show First Planet",
-                       "url": "",
+                       "url": "https://www.youtube.com/embed/HsnJn9KcTjI",
                        "status": "completed/ not completed/ current"
                    },
                    {
-                       "video_id": 2,
+                       "video_id": 7,
                        "name": "Error Handling Strategies",
-                       "url": "",
+                       "url": "https://www.youtube.com/embed/N1GK3oSo6xY",
                        "status": "completed/ not completed/ current"
                    },
                    {
-                       "video_id": 3,
+                       "video_id": 8,
                        "name": "Array Methods and Promises",
-                       "url": "",
+                       "url": "https://www.youtube.com/embed/RGRxW4Lz1dQ",
                        "status": "completed/ not completed/ current"
                    },
                    {
-                       "video_id": 4,
+                       "video_id": 9,
                        "name": "Promises with .forEach",
-                       "url": "",
+                       "url": "https://www.youtube.com/embed/0ob3r8QswGs",
                        "status": "completed/ not completed/ current"
                    },
                    {
-                    "video_id": 5,
+                    "video_id": 10,
                     "name": "Promises with .map",
-                    "url": "",
+                    "url": "https://www.youtube.com/embed/JkmwpsCCdwY",
                     "status": "completed/ not completed/ current"
                     }
                 ]
@@ -85,42 +87,43 @@
         ]
     },
     {
-        "course_id": "2",
+        "course_id": "LGKrmakmg",
         "title": "Introduction to jQuery",
         "description": "Learn how to access and modify the DOM with  ease using jQuery!",
         "sections": [
             {
                "section_id": 1,
-               "name": "Lesson 1: The Basics: the DOM,$,and Selectors",
+               "menu": "ackgewf",
+               "name": "1. The Basics: the DOM,$,and Selectors",
                "videos": [
                    {
-                       "video_id": 1,
+                       "video_id": 11,
                        "name": "Course Introduction",
-                       "url": "",
+                       "url": "https://www.youtube.com/embed/YzR-Iv2l8sE",
                        "status": "completed/ not completed/ current"
                    },
                    {
-                       "video_id": 2,
+                       "video_id": 12,
                        "name": "Why does jQuery exist?",
-                       "url": "",
+                       "url": "https://www.youtube.com/embed/KhM7s2GtyQs",
                        "status": "completed/ not completed/ current"
                    },
                    {
-                       "video_id": 3,
+                       "video_id": 13,
                        "name": "How to use the $",
-                       "url": "",
+                       "url": "https://www.youtube.com/embed/aN8TN65wJig",
                        "status": "completed/ not completed/ current"
                    },
                    {
-                    "video_id": 4,
+                    "video_id": 14,
                     "name": "How is jQuery included in a Page?",
-                    "url": "",
+                    "url": "https://www.youtube.com/embed/8DYWtGVwai0",
                     "status": "completed/ not completed/ current"
                 },
                 {
-                    "video_id": 5,
+                    "video_id": 15,
                     "name": "Family Tree Revisited",
-                    "url": "",
+                    "url": "https://www.youtube.com/embed/8DYWtGVwai0",
                     "status": "completed/ not completed/ current"
                 }
                 
@@ -128,46 +131,43 @@
             },
             {
                "section_id": 2,
-               "name": "Lesson 2: The Tricks: DOM Manipulation",
+               "name": "2. The Tricks: DOM Manipulation",
+               "menu": "ackgefe",
                "videos": [
                    {
-                       "video_id": 1,
+                       "video_id": 16,
                        "name": "jQuery Documentation and You",
-                       "url": "",
+                       "url": "https://www.youtube.com/embed/8DYWtGVwai0",
                        "status": "completed/ not completed/ current"
                    },
                    {
-                       "video_id": 2,
+                       "video_id": 17,
                        "name": "pulling HTML and Text",
-                       "url": "",
+                       "url": "https://www.youtube.com/embed/8DYWtGVwai0",
                        "status": "completed/ not completed/ current"
                    },
                    {
-                       "video_id": 3,
+                       "video_id": 18,
                        "name": "Adding DOM elements",
-                       "url": "",
+                       "url": "https://www.youtube.com/embed/8DYWtGVwai0",
                        "status": "completed/ not completed/ current"
                    },
                    {
-                       "video_id": 4,
+                       "video_id": 19,
                        "name": "Appending Child elements",
-                       "url": "",
+                       "url": "https://www.youtube.com/embed/8DYWtGVwai0",
                        "status": "completed/ not completed/ current"
                    },
                    {
-                    "video_id": 5,
+                    "video_id": 20,
                     "name": "$(function)",
-                    "url": "",
+                    "url": "https://www.youtube.com/embed/8DYWtGVwai0",
                     "status": "completed/ not completed/ current"
                     }
                 ]
             }
         ]
-    },
-    {
-        "course_id": 3,
-        "title": "Version control with Git",
-        "description": "This course covers the essentials of using the version control system Git." 
     }
+    
 ]
 
