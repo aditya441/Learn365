@@ -25,6 +25,7 @@ import CreateSection from './components/CreateSection';
 import courseData from './components/coursesData';
 import Video2 from './components/video2';
 import Video1 from './components/video1';
+import ShowQuiz from './components/quizComponents/showingQuiz'
 firebase.initializeApp(firebaseConfig);
 
 // import Stories from './components/stories';
