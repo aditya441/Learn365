@@ -3,7 +3,7 @@
     /* border:2px solid red; */
     justify-content: center;
     padding:50px;
-    /* flex-direction: column; */
+    flex-direction: column;
     /* background-image: url(./color.jpg); */
     background-size: cover;
 }
@@ -16,24 +16,30 @@
     border-radius: 2px;
     flex-direction: column;
     padding:15px;
-    
-
+    margin-left:16em
 }
+.add-section{
+/* border:2px solid green; */
+width: 11vw;
+margin-bottom: 20px;
+}    
+
 .form-group{
     padding-left:50px;
     padding-right: 50px;
     /* border:1px solid green; */
 }
 .vedio-detail{
-    padding-left:90px;
+    padding-left:65px;
     padding-right: 80px;
     display: flex;
     margin-bottom: 10px;
     /* border:2px solid black; */
     margin-left: 50px;
     margin-right: 50px;
+    
     padding-bottom: 10px;
-    background: #a5a8a5;
+    background: linear-gradient(-45deg,#EC5252 0%,#6E1A52 100%);;
     border-radius: 3%;
 
 }
@@ -60,15 +66,44 @@
     font-family:open sans,helvetica neue,Helvetica,Arial,sans-serif;
     /* font-weight: 300; */
     /* font-size: 15px; */
-    color: #29303b;
-    margin-right: 30px;
+    color: #eff2f7;
+    margin-right: 20px;
 }
 .vedio-url{
     font-family:open sans,helvetica neue,Helvetica,Arial,sans-serif;
     /* font-weight: 300; */
     /* font-size: 15px; */
-    color: #29303b
+    /* color: #29303b */
+    color: #eff2f7;
 }
 .submit{
     margin-left: 40%;
+}
+.continue{
+    margin-left: 10px;
+}
+.a{
+    display: flex;
+    
+}
+.courseName{
+    font-size: 2em;
+    margin-left: 8em;
+    margin-bottom: 20px;
+    /* border:1px solid red; */
+    border-radius: 3px;
+    box-shadow:2px 2px 2px 2px #c76071;
+    margin-right: 6.9em;
+    padding:10px;
+    
+    color:rgb(61, 12, 45) ;
+
+}
+.course_name{
+    /* border-bottom: 1px solid ; */
+    box-shadow: 1px 1px 1px 1px #c76071
+    
+}
+.sections{
+    margin-left:20px;
 }

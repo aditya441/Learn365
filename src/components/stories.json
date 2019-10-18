@@ -1,0 +1,136 @@
+[
+    {
+        "course_id": "1",
+        "title": "Linux Administration Bootcamp: Go from Beginner to Advanced",
+        "sections": [
+            {
+               "section_id": 1,
+               "name": "section 1: Linux Fundamentals",
+               "videos": [
+                   {
+                       "video_id": 1,
+                       "name": "Lesson 1: Introduction",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                       "video_id": 2,
+                       "name": "Lesson 2: How to solve problems",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                       "video_id": 3,
+                       "name": "Lesson 3: Big O Notation",
+                       "status": "completed/ not completed/ current"
+                   }
+               ]
+            },
+            {
+               "section_id": 2,
+               "name": "section 2: The Linux Command Line",
+               "videos": [
+                   {
+                       "video_id": 1,
+                       "name": "Lesson 1: Collection Data Structures",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                       "video_id": 2,
+                       "name": "Lesson 2: Recursion",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                       "video_id": 3,
+                       "name": "Lesson 3: Trees",
+                       "status": "completed/ not completed/ current"
+                   },
+                   {
+                       "video_id": 4,
+                       "name": "Lesson 4: Maps and Hashtags",
+                       "status": "completed/ not completed/ current"
+                   }
+               ]
+            },
+            {
+                "section_id": 3,
+                "name": "section 3: Linux Users and Groups ",
+                "videos": [
+                    {
+                        "video_id": 1,
+                        "name": "Lesson 1: Introduction",
+                        "status": "completed/ not completed/ current"
+                    },
+                    {
+                        "video_id": 2,
+                        "name": "Lesson 2: How to solve problems",
+                        "status": "completed/ not completed/ current"
+                    },
+                    {
+                        "video_id": 3,
+                        "name": "Lesson 3: Big O Notation",
+                        "status": "completed/ not completed/ current"
+                    }
+                ]
+             }
+        ]
+    },  
+ {
+     "course_id": "4",
+     "title": "Data Structures and Algorithms!",
+     "sections": [
+         {
+            "section_id": 1,
+            "name": "section 1: Introduction",
+            "videos": [
+                {
+                    "video_id": 1,
+                    "name": "Lesson 1: Introduction",
+                    "status": "completed/ not completed/ current"
+                },
+                {
+                    "video_id": 2,
+                    "name": "Lesson 2: How to solve problems",
+                    "status": "completed/ not completed/ current"
+                },
+                {
+                    "video_id": 3,
+                    "name": "Lesson 3: Big O Notation",
+                    "status": "completed/ not completed/ current"
+                }
+            ]
+         },
+         {
+            "section_id": 2,
+            "name": "section 2: Data Structures",
+            "videos": [
+                {
+                    "video_id": 1,
+                    "name": "Lesson 1: Collection Data Structures",
+                    "status": "completed/ not completed/ current"
+                },
+                {
+                    "video_id": 2,
+                    "name": "Lesson 2: Recursion",
+                    "status": "completed/ not completed/ current"
+                },
+                {
+                    "video_id": 3,
+                    "name": "Lesson 3: Trees",
+                    "status": "completed/ not completed/ current"
+                },
+                {
+                    "video_id": 4,
+                    "name": "Lesson 4: Maps and Hashtags",
+                    "status": "completed/ not completed/ current"
+                }
+            ]
+         }
+     ]
+ }
+ 
+ 
+]
+
+
+
+
+   
