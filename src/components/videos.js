@@ -11,10 +11,12 @@ class Videos extends Component {
   render() {
     return (
       <div> 
+        
         {this.props.videos.map(video => (
           <div>
+              
             <ul className="collapse list-unstyled" id="section1Submenu">
-              <a href={`/${video.video_id}/Sections`} title={video.name}>{video.name}</a>
+              <a href={`/${this.props.id}/${video.video_id}/Sections`} title={video.name}>{video.name}</a>
               </ul>
           </div>
           ))}  

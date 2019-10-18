@@ -374,20 +374,19 @@ a:focus{
 }
 /* new css */
 .vds-color--green {
-  color: #da3131!important;
+  color: green;
 }
-.vds-icon--lg {
-  height: 2.5rem;
-  width: 2.5rem;
-}
+
 .vds-icon {
-  height: 2.5rem;
-  width: 2rem;
+  height: 3rem;
+  width: 3rem;
   display: inline-block;
   fill: currentColor;
   line-height: 0;
   stroke: currentColor;
   vertical-align: middle;
+  padding-top: 5px;
+  padding-left: 2px;
 }
 *, :after, :before {
   box-sizing: inherit;
