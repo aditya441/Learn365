@@ -5,9 +5,9 @@ class Videos extends Component {
   constructor(props) {
     super(props);
   }
-  state = {
-    url: "https://www.youtube.com/embed/FN5Qi2GnyxM"
-  }
+  // state = {
+  //   url: "https://www.youtube.com/embed/FN5Qi2GnyxM"
+  // }
   render() {
     return (
       <div> 
@@ -17,6 +17,7 @@ class Videos extends Component {
               
             <ul className="collapse list-unstyled" id="section1Submenu">
               <a href={`/${this.props.id}/${video.video_id}/Sections`} title={video.name}>{video.name}</a>
+              {console.log(this.props.id, video.video_id)}
               </ul>
           </div>
           ))}  
@@ -24,4 +25,5 @@ class Videos extends Component {
     );
    }
 }
+// {`/${this.props.id}/${video.video_id}/Sections`}
 export default Videos;

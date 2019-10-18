@@ -100,7 +100,8 @@ playAgain = () => {
             <PrivateRouteLogin exact path='/login' authed={this.state.authorized} component={Login} />
             <Route  path='/signup' render={props =>(
               <React.Fragment>
-                <Headersignup/>
+                <HeaderAuth />
+                {/* <Headersignup/> */}
                 <Register />
               </React.Fragment>
             )} />
@@ -147,15 +148,17 @@ playAgain = () => {
  
                  <Route  path='/:courseId/Sections' render={props =>(
                   <React.Fragment>
-                    <Headersignup />
+                    <Headersignup {...props} name={this.state.user} />
+                    {/* <Headersignup /> */}
                     <Single data={this.state.courseData} {...props}/>  
                   </React.Fragment>
                 )} />
 
                 <Route  path='/:courseId/:videoId/Sections' render={props =>(
                   <React.Fragment>
-                  <Headersignup />
-                  <Single data={this.state.courseData} {...props}/>
+                    <Headersignup {...props} name={this.state.user} />
+                   {/* <Headersignup /> */}
+                   <Single data={this.state.courseData} {...props}/>
                   </React.Fragment>
                 )} />  
                 <Route path='/quiz' render={props =>(
