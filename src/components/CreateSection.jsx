@@ -16,10 +16,12 @@ class CreateSection extends Component {
       vedioUrl: "",
       courseName: "",
       sections: [],
-      addedSection : ''
+      name: "",
+      data: [],
+      v: [],
+      saveClicked: false
     };
   }
-
 
   onSectionChange = e => {
     const state = this.state;
@@ -32,7 +34,19 @@ class CreateSection extends Component {
   onUrlChange = e => {
     this.setState({ vedioUrl: e.target.value });
   };
-
+  addClicked = () => {
+    console.log("add clicked");
+    this.state.videos.push({
+      vedioName: this.state.vedioName,
+      vedioUrl: this.state.vedioUrl
+    });
+    this.state.v.push({
+      vedioName: this.state.vedioName,
+      vedioUrl: this.state.vedioUrl
+    });
+    this.setState({ vedioName: "", vedioUrl: "" });
+    
+  };
   handleChange = () => {
     this.setState({ onClick: this.state.onClick.concat([1]) });
   };
@@ -41,14 +55,12 @@ class CreateSection extends Component {
   };
 
   onSubmit = e => {
-    // e.preventDefault();
-    this.state.videos.push({
-      vedioName: this.state.vedioName,
-      vedioUrl: this.state.vedioUrl
-    });
+    e.preventDefault();
+    this.setState({ saveClicked: true });
+    this.setState({ name: this.state.sectionName });
     // this.setState({videos: this.state.v})
     const { courseId, sectionName, videos } = this.state;
-    this.setState({addedSection : sectionName})
+    // this.state.addedSection.push(this.state.sectionName);
     this.ref
       .add({
         courseId,
@@ -60,27 +72,10 @@ class CreateSection extends Component {
         this.setState({
           sectionName: "",
           vedioName: "",
-          vedioUrl: "",
-          videos: [],
-          sectionId:docRef.id
+          vedioUrl: ""
+          // sectionId:docRef.id,
         });
-        console.log(this.state.sectionId)
-        const docref = firebase
-      .firestore()
-      .collection("sections")
-      .doc(this.state.sectionId);
-    docref.get().then(doc => {
-        // console.log( 'section doc',doc);
-      if (doc.exists) {
-        // this.setState({
-                this.state.sections.push(doc.data())
-          // isLoading:false
-        // });
-      } else {
-        console.log("no such document");
-      }
-    });
-        // this.props.history.push(`/${this.props.user.displayName}/course/${courseId}/Sections`)
+        this.state.sectionId.push(docRef.id);
       })
       .catch(error => {
         console.error(error);
@@ -88,45 +83,106 @@ class CreateSection extends Component {
   };
 
   componentDidMount() {
-    //for fecting course name
+   
+    this.fetchSection();
     const ref = firebase
       .firestore()
       .collection("courses")
       .doc(this.state.courseId);
     ref.get().then(doc => {
-      //   console.log(doc);
       if (doc.exists) {
         this.setState({
           courseName: doc.data()
-          // isLoading:false
         });
       } else {
         console.log("no such document");
       }
     });
-
-    
   }
+  fetchSection = () => {
+    firebase
+      .firestore()
+      .collection("sections")
+      .where("courseId", "==", this.state.courseId)
+      .get()
+      .then(snapshot => {
+        if (snapshot.empty) {
+          console.log("no macthing documents");
+          return;
+        }
+        snapshot.forEach(doc => {
+          // console.log('docData : ',doc.data());
+          let data = doc.data();
+          // console.log(data.sectionName);
+          // this.state.sections.push(data.sectionName)
+          this.state.data.push(data);
+        });
+      })
+      .catch(err => {
+        console.log("error getting documents", err);
+      });
+  };
+
   render() {
     return (
       <div className="course-body">
         {/* <button  onClick={this.addSection}type='' className='btn btn-danger submit add-section'> add section</button> */}
         <div className="courseName">
-          {console.log('sections ',this.state.sections)}
-          <p className='course_name'> Course : {this.state.courseName.courseName}</p>
-          <div className='sections'>
+          {console.log("data: ", this.state.data)}
+          {/* {console.log('sections ',this.state.sections)} */}
+          <p className="course_name">
+            {" "}
+            Course : {this.state.courseName.courseName}
+          </p>
+          <div className="sections">
+            {this.state.saveClicked === true && (
+              <div className="single-section">
+                <ul className="section-list">
+                  <li>
+                    {this.state.name}
+                    {console.log("v : ", this.state.v)}
+                  </li>
+                </ul>
+                {this.state.v.map(video => (
+                  <div className="vedioName">
+                    <ul>
+                      <li>
+                        <span className="v">Video </span>
+                        &nbsp; {video.vedioName}
+                        <span className="u"> Url </span>
+                        &nbsp; {video.vedioUrl}
+                        {console.log("VideoName :", video.vedioUrl)}
+                      </li>
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
+            {this.state.data.map(section => (
+              <div className="single-section">
+                {console.log("single section ", section)}
+                <ul className="section-list">
+                  <li>{section.sectionName}</li>
+                </ul>
 
-          {this.state.sections.map((section)=>(
-              <div className='single-section'>
-                  {console.log('single section ',section)}
-                  <span>Section : </span>
-                    {section.sectionName}
-           </div>
-         ))} 
-         {/* <div className="single-section">
-                <span>Section: </span>
-                {this.state.addedSection}
-         </div> */}
+                {console.log("vedio : ", section.videos)}
+
+                {section.videos.map(video => (
+                  <div className="vedioName">
+                    <ul>
+                      <li>
+                        <span className="v">Video </span>
+                        &nbsp; {video.vedioName}
+                        <span className="u"> Url </span>
+                        &nbsp; {video.vedioUrl}
+                      </li>
+                    </ul>
+
+                    {console.log("video", video)}
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
         <div className="course">
@@ -134,7 +190,6 @@ class CreateSection extends Component {
             <label htmlFor="" className="col-xs-2 section-name">
               Section
             </label>
-            {/* <button onClick={this.handleChange} type="button" className="btn btn-link">+ add section</button> */}
             <input
               type="text"
               name="sectionName"

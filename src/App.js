@@ -103,7 +103,8 @@ playAgain = () => {
             <PrivateRouteLogin exact path='/login' authed={this.state.authorized} component={Login} />
             <Route  path='/signup' render={props =>(
               <React.Fragment>
-                <Headersignup/>
+                <HeaderAuth />
+                {/* <Headersignup {...props} name={this.state.user}/> */}
                 <Register />
               </React.Fragment>
             )} />

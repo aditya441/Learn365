@@ -60,7 +60,7 @@ class AddVedio extends Component {
           <button
               onClick={this.props.addClicked}
               type="submit"
-              className="btn btn-danger continue"
+              className="btn btn-light add"
               >
               {" "}
               add
