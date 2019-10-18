@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route ,Switch} from 'react-router-dom';
 
 import './App.css';
 import QuestionBox from './components/quizComponents/QuestionBox';
+import Addquiz from './components/quizComponents/addQuiz';
 import Register from './components/registration';
 import Result from './components/quizComponents/Result';
 import Login from './components/login';
@@ -208,11 +209,14 @@ playAgain = () => {
             </div>
           </React.Fragment>
         )} />
+        <Route path='/:userId/course/:courseId/addQuiz' render={props => (
+          <React.Fragment>
+            <Headersignup {...props} name={this.state.user}/>
+            <Addquiz {...props} userId={this.state.user} />
+          </React.Fragment>
+        )} />
         </Switch>
        </Router>
-          {/* </Switch>
-        </Router> */}
-       
       </div>
     );
   }

@@ -57,14 +57,7 @@ class AddVedio extends Component {
               required
               />
           </div>
-          <button
-              onClick={this.props.addClicked}
-              type="submit"
-              className="btn btn-danger continue"
-              >
-              {" "}
-              add
-            </button>
+         
         </div>
               {/* </form> */}
       </div>

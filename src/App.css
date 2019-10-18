@@ -518,4 +518,10 @@ i {
   top: -60px;
   padding: 0.2em 2em;
 }
-
+.quizing {
+  color: white;
+  margin-left: 4em;
+}
+.quizi {
+  background: white;
+}

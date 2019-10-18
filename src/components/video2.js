@@ -197,6 +197,9 @@ class Video2 extends Component {
               </a>
             </li>
           </ol>
+          <Link to="/quiz">
+          <button className="btn btn-link  quizing">Take Quiz</button>
+          </Link>
         </nav>
 
         <div className="embed-responsive embed-responsive-16by9">
