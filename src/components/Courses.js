@@ -12,7 +12,7 @@ class Courses extends Component {
                         <Link to={`/${object.course_id}/Sections`}>
                         <button className="btn1 btn-danger">click here</button>
                         </Link>
-                    </div>  
+                    </div>
                 ))}
             </div>       
         )   
