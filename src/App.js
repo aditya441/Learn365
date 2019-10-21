@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route ,Switch} from 'react-router-dom';
 import './App.css';
+import Addquiz from './components/quizComponents/addQuiz';
+import Showing from './components/quizComponents/showingQuiz';
 import QuestionBox from './components/quizComponents/QuestionBox';
 import Addquiz from './components/quizComponents/addQuiz'
 import Register from './components/registration';
@@ -34,6 +36,7 @@ class App extends Component {
 constructor(props){
   super(props);
   this.state={
+    data:[],
     quiz:quizData,
     score:0,
     responses:0,

@@ -22,7 +22,8 @@ class CreateSection extends Component {
       data: [],
       v: [],
       saveClicked: false,
-      addSection:false
+      addSection:false,
+      user : this.props.match.params.userId
     };
   }
   
@@ -99,7 +100,7 @@ class CreateSection extends Component {
     this.setState({ onClick: this.state.onClick.concat([1]) });
   };
   onContinue = () => {
-    window.location = "/welcome";
+    window.location = `/${this.state.user}/course/${this.state.courseId}/addquiz`;
   };
 
   onSubmit = e => {
@@ -310,7 +311,7 @@ class CreateSection extends Component {
               className="btn btn-danger continue"
             >
               {" "}
-              Continue
+              Add Quiz
             </button>
           </div>
       
