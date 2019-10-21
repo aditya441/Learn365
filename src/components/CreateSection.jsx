@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AddVedio from "./AddVedio";
 import firebase from "firebase";
+const uuidv1 = require('uuid/v1');
 // import { Link } from "react-router-dom";
 class CreateSection extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class CreateSection extends Component {
       videos: [],
       vedioName: "",
       vedioUrl: "",
+      vedioId:'',
       courseName: "",
       sections: [],
       name: "",
@@ -61,13 +63,15 @@ class CreateSection extends Component {
         document.querySelector(".errorMsg").style.display = "none";
         this.state.videos.push({
           vedioName: this.state.vedioName,
-          vedioUrl: this.state.vedioUrl
+          vedioUrl: this.state.vedioUrl,
+          vedioId:uuidv1()
         });
         this.state.v.push({
           vedioName: this.state.vedioName,
-          vedioUrl: this.state.vedioUrl
+          vedioUrl: this.state.vedioUrl,
+          vedioId:uuidv1()
         });
-        this.setState({ vedioName: "", vedioUrl: "" });
+        this.setState({ vedioName: "", vedioUrl: "",vedioId:'' });
       }
      
       

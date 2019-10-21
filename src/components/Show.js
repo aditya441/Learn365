@@ -51,7 +51,7 @@ class Show extends Component {
           <tr className="course-header-list">
             <th>All Courses</th>
             <th><a href='/welcome' >Collections</a></th>
-            <th>Wishlist</th>
+            <th><Link to={`/${this.props.user.displayName}/MyCourse/`}> My Courses</Link></th>
             <th>Archived</th>
           </tr>
         </nav>

@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route ,Switch} from 'react-router-dom';
 import './App.css';
 import QuestionBox from './components/quizComponents/QuestionBox';
+import Addquiz from './components/quizComponents/addQuiz'
 import Register from './components/registration';
 import Result from './components/quizComponents/Result';
 import Login from './components/login';
 import Welcome from './components/welcomePage';
 import Courses from './components/Courses';
+import MyCourse from './components/MyCourse'
 import Sections from './components/Sections';
 import Header from './components/Header';
 import Homepage from './components/Homepage';
@@ -110,10 +112,18 @@ playAgain = () => {
             <Route  path='/courses' render={props =>(
               <React.Fragment>
                 <Headersignup {...props} name={this.state.user}/>
-                <Show />
-                {/* <Courses courses={this.state.courseData}/>   */}
+                <Show user={this.state.user}/> 
+  
               </React.Fragment>
             )} />
+            <Route path='/:userId/MyCourse' render={props=>(
+              <React.Fragment>
+              <Headersignup {...props} name={this.state.user}/>
+              <MyCourse {...props} user={this.state.user}/>
+              {/* <Courses courses={this.state.courseData}/>   */}
+            </React.Fragment>
+            )} />
+
             
             <PrivateRouteLogin exact path='/login' authed={this.state.authorized} component={Login} />
          
@@ -143,6 +153,7 @@ playAgain = () => {
  
                  <Route  path='/:courseId/Sections' render={props =>(
                   <React.Fragment>
+
                     <Headersignup {...props} name={this.state.user} />
                     {/* <Display /> */}
                     <Single data={this.state.courseData} {...props}/>  
@@ -172,8 +183,13 @@ playAgain = () => {
           </React.Fragment>
         )} />
             
-        
-        <Route path='/show/:id' component={Show} />
+            <Route path='/:userId/course/:courseId/addQuiz' render={props => (
+         <React.Fragment>
+           <Headersignup {...props} name={this.state.user}/>
+           <Addquiz {...props} userId={this.state.user} />
+         </React.Fragment>
+       )} />
+       
           </Switch>
         </Router>
        
