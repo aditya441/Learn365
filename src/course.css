@@ -56,6 +56,7 @@ margin-bottom: 20px;
     margin-bottom: 10px;
     
 }
+
 .section-name{
     font-family:open sans,helvetica neue,Helvetica,Arial,sans-serif;
     /* font-weight: 300; */
@@ -82,6 +83,9 @@ margin-bottom: 20px;
 .continue{
     margin-left: 10px;
     
+}
+.addSection{
+
 }
 .add{
     margin-left:10px;

@@ -76,7 +76,7 @@ window.location='./welcome'
 
                         <a href="#">Forgot Password</a>
                    </div>
-                   <button type="submit"onClick={this.loginClicked} className="btn btn-custom btn-block text-uppercase rounded-pill btn-lg mt-5">Login</button>
+                   <button type="submit"onClick={this.loginClicked} className="btn btn-custom btn-block text-uppercase rounded-pill btn-lg mt-5 ">Login</button>
                    <p className="mt-3 font-weight-normal">Don't have an account ? <Link to="/signup"><strong>Register Now</strong></Link></p>
                </form>
            </div>

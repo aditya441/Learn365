@@ -52,7 +52,7 @@ render(){
                    alt="user-dummy-pic"
                    className="userDummyPic"
                  />
-                 <span className="userName"> {this.state.name.displayName}</span>
+                 <span className="userName"> {this.props.name.displayName}</span>
                </div>
                <div className="dropdown-menu">
                  <a className="dropdown-item" href="#">
