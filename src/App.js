@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route ,Switch} from 'react-router-dom';
-
 import './App.css';
 import QuestionBox from './components/quizComponents/QuestionBox';
 import Register from './components/registration';
 import Result from './components/quizComponents/Result';
-
 import Login from './components/login';
 import Welcome from './components/welcomePage';
 import Courses from './components/Courses';
@@ -24,18 +22,12 @@ import quizData from './components/quizData.json';
 import CreateSection from './components/CreateSection';
 import courseData from './components/coursesData';
 // import config from './Firebase';
-
-
 import Show from './components/Show';
 import Display from './components/showSections';
-
 import Single from './components/singleCourse';
 // var mainApp = firebase.initializeApp(firebaseConfig);
 // var secondaryApp = firebase.initializeApp({config},"secondary");
 // firebase.initializeApp(config);
-
-
-
 class App extends Component {
 constructor(props){
   super(props);
@@ -49,7 +41,6 @@ constructor(props){
     user:''
   }
   }
-
 computeAnswer = (answer,correctAnswer) => {
   if(answer === correctAnswer){
     this.setState({
@@ -60,17 +51,13 @@ computeAnswer = (answer,correctAnswer) => {
     responses:this.state.responses + 1
   })
 }
-
 playAgain = () => {
   this.setState({
     score:0,
     responses:0
   })
 }
-
-
    
-
   componentDidMount(){
     firebase.auth().onAuthStateChanged(user=>{
       if(user){
@@ -120,7 +107,6 @@ playAgain = () => {
                 <CreateCourse />
               </React.Fragment>
             )} /> */}
-
             <Route  path='/courses' render={props =>(
               <React.Fragment>
                 <Headersignup {...props} name={this.state.user}/>
@@ -157,13 +143,11 @@ playAgain = () => {
  
                  <Route  path='/:courseId/Sections' render={props =>(
                   <React.Fragment>
-
                     <Headersignup {...props} name={this.state.user} />
                     {/* <Display /> */}
                     <Single data={this.state.courseData} {...props}/>  
                   </React.Fragment>
                 )} />
-
                 <Route  path='/:courseId/:videoId/Sections' render={props =>(
                   <React.Fragment>
                     <Headersignup {...props} name={this.state.user} />
@@ -190,7 +174,6 @@ playAgain = () => {
             
         
         <Route path='/show/:id' component={Show} />
-
           </Switch>
         </Router>
        
@@ -199,3 +182,10 @@ playAgain = () => {
   }
 }
 export default App;
+Collapse
+
+
+
+
+
+
