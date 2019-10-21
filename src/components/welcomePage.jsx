@@ -22,7 +22,8 @@ class Welcome extends Component{
                         <p>Teach what you Love.Learn365 gives you the tools to create an online course.</p> 
                         <div className="FormField">
                             <Link to={`/${this.state.user.displayName}/createcourse`}>
-                            <button type="button" className="btn btn-danger">Start Teaching</button>
+                            
+                            <button type="button" className="btn btn-primary">Start Teaching</button>
                             </Link>
                         </div>
                         
@@ -32,7 +33,7 @@ class Welcome extends Component{
                         <p>Get unlimited access to the 100's of courses that Learn365 provides you.</p>
                         <div className="FormField">
                             <Link to='/Courses'>
-                            <button type="button" className="btn btn-danger">Start Leaning</button>
+                            <button type="button" className="btn btn-primary">Start Leaning</button>
                             </Link>
                         </div>
                         
