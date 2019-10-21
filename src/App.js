@@ -182,7 +182,7 @@ playAgain = () => {
   }
 }
 export default App;
-Collapse
+
 
 
 
