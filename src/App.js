@@ -20,12 +20,20 @@ import PrivateRoute from './components/PrivateRoute';
 import PrivateRouteLogin from './components/PrivateRouteLogin'
 import CreateCourse from './components/CreateCourse';
 import quizData from './components/quizData.json';
-import firebaseConfig from './firebase.config';
+// import firebaseConfig from './firebase.config';
 import CreateSection from './components/CreateSection';
 import courseData from './components/coursesData';
+// import config from './Firebase';
+
+
+import Show from './components/Show';
+import Display from './components/showSections';
 
 import Single from './components/singleCourse';
-firebase.initializeApp(firebaseConfig);
+// var mainApp = firebase.initializeApp(firebaseConfig);
+// var secondaryApp = firebase.initializeApp({config},"secondary");
+// firebase.initializeApp(config);
+
 
 
 class App extends Component {
@@ -37,7 +45,7 @@ constructor(props){
     responses:0,
     authorized:true,
     courseData,
-   
+    
     user:''
   }
   }
@@ -116,7 +124,8 @@ playAgain = () => {
             <Route  path='/courses' render={props =>(
               <React.Fragment>
                 <Headersignup {...props} name={this.state.user}/>
-                <Courses courses={this.state.courseData}/>  
+                <Show />
+                {/* <Courses courses={this.state.courseData}/>   */}
               </React.Fragment>
             )} />
             
@@ -136,7 +145,7 @@ playAgain = () => {
          render={props =>(
            <React.Fragment>
              <Headersignup {...props} name={this.state.user}/>
-         <CreateCourse {...props} userId={this.state.user}/>
+              <CreateCourse {...props} userId={this.state.user}/>
            </React.Fragment>
          )} />
          <Route path='/:userId/course/:courseId/sections' render={props =>(
@@ -148,9 +157,10 @@ playAgain = () => {
  
                  <Route  path='/:courseId/Sections' render={props =>(
                   <React.Fragment>
+
                     <Headersignup {...props} name={this.state.user} />
-                    {/* <Headersignup /> */}
-                    <Single data={this.state.courseData} {...props}/>  
+                    <Display />
+                    {/* <Single data={this.state.courseData} {...props}/>   */}
                   </React.Fragment>
                 )} />
 
@@ -158,6 +168,7 @@ playAgain = () => {
                   <React.Fragment>
                     <Headersignup {...props} name={this.state.user} />
                    {/* <Headersignup /> */}
+                   {/* <Sections {...props}/> */}
                    <Single data={this.state.courseData} {...props}/>
                   </React.Fragment>
                 )} />  
@@ -176,8 +187,10 @@ playAgain = () => {
             </div>
           </React.Fragment>
         )} />
-     
-                
+            
+        
+        <Route path='/show/:id' component={Show} />
+
           </Switch>
         </Router>
        

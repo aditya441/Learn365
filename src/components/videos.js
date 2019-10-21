@@ -16,7 +16,9 @@ class Videos extends Component {
           <div>
               
             <ul className="collapse list-unstyled" id="section1Submenu">
-              <a href={`/${this.props.id}/${video.video_id}/Sections`} title={video.name}>{video.name}</a>
+              <a href={`/${this.props.id}/${video.video_id}/Sections`} title={video.name}>
+              {video.name}
+              </a>
               {console.log(this.props.id, video.video_id)}
               </ul>
           </div>
@@ -25,5 +27,5 @@ class Videos extends Component {
     );
    }
 }
-// {`/${this.props.id}/${video.video_id}/Sections`}
+
 export default Videos;
