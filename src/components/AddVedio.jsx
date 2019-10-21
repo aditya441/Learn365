@@ -19,7 +19,7 @@ class AddVedio extends Component {
   render() {
     return (
       <div>
-          {/* <form onSubmit={this.props.addClicked}> */}
+          <form >
 
         <div className="vedio-detail">
           <div className="form-inline vedio-title">
@@ -50,16 +50,24 @@ class AddVedio extends Component {
             //   {()=>{
             //       this.props.handleChange(this.props.vedioUrl);
             //   }}
-            type="text"
+            type="url"
+            pattern="https?://.+"
             className="form-control col-xs-6 course-input"
             name="vedioUrl"
             placeholder="Enter video url"
               required
               />
           </div>
-         
+          <button
+              onClick={this.props.addClicked}
+              type="submit"
+              className="btn btn-light add"
+              >
+              {" "}
+              add
+            </button>
         </div>
-              {/* </form> */}
+              </form>
       </div>
     );
   }
