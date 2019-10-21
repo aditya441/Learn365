@@ -35,23 +35,7 @@ class Sections extends Component {
         <nav id="sidebar">
           <h3 class="_sidebar--header--2BaH_">
             <a href="/courses">
-              <span class="_sidebar--title-content--tLGxZ">
-                <span class="_sidebar--arrow--2Hns-">
-                  <i
-                    class="vds-icon vds-icon--sm"
-                    role="img"
-                    aria-hidden="true"
-                  >
-                    <svg viewBox="0 5 32 25">
-                      <path
-                        d="M20.589 23.84l-10.175-7.13c-.422-.297-.541-.903-.265-1.356a.947.947 0 0 1 .276-.292L20.6 8.152c.425-.29.99-.153 1.259.304.092.157.141.338.141.524v14.04c0 .542-.409.98-.912.98a.868.868 0 0 1-.5-.16z"
-                        fill-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </i>
-                </span>
-                Sections>
-              </span>
+                <h11>Sections</h11>
             </a>
             <p>currently playing: {this.state.videoName}</p>
           </h3>
@@ -75,6 +59,7 @@ class Sections extends Component {
               width="560"
               height="215"
               src={this.state.url}
+              // {this.state.url}
               allowfullscreen
             ></iframe>
           </div>

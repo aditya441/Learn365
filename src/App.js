@@ -159,8 +159,8 @@ playAgain = () => {
                   <React.Fragment>
 
                     <Headersignup {...props} name={this.state.user} />
-                    <Display />
-                    {/* <Single data={this.state.courseData} {...props}/>   */}
+                    {/* <Display /> */}
+                    <Single data={this.state.courseData} {...props}/>  
                   </React.Fragment>
                 )} />
 

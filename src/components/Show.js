@@ -17,7 +17,8 @@ class Show extends Component {
     this.ref = secondaryApp.firestore().collection('courses');
     this.unsubscribe = null;
     this.state = {
-      courses: []
+      courses: [],
+      courseId: ''
     };
   }
 
@@ -49,7 +50,7 @@ class Show extends Component {
           <h3>My Courses</h3>
           <tr className="course-header-list">
             <th>All Courses</th>
-            <th>Collections</th>
+            <th><a href='/welcome' >Collections</a></th>
             <th>Wishlist</th>
             <th>Archived</th>
           </tr>
@@ -57,7 +58,7 @@ class Show extends Component {
         
                 
              
-        <div className="box-wrapper">
+        <div className="card-wrapper">
           {this.state.courses.map(board =>
             <div className="box">
               <div className="card-image">
@@ -78,7 +79,7 @@ class Show extends Component {
               </Link>
               
               {/* <a href={`/${board.key}/Sections`} class="btn btn-custom btn-default btn-sm">START COURSE</a> */}
-                          </div>
+              </div>
             </div>        
           )}    
         </div>
