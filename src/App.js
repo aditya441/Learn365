@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route ,Switch} from 'react-router-dom';
-
 import './App.css';
+import Addquiz from './components/quizComponents/addQuiz';
 import Showing from './components/quizComponents/showingQuiz';
 import QuestionBox from './components/quizComponents/QuestionBox';
-import Addquiz from './components/quizComponents/addQuiz';
 import Register from './components/registration';
 import Result from './components/quizComponents/Result';
 import Login from './components/login';
@@ -21,19 +20,16 @@ import PrivateRoute from './components/PrivateRoute';
 import PrivateRouteLogin from './components/PrivateRouteLogin'
 import CreateCourse from './components/CreateCourse';
 import quizData from './components/quizData.json';
-import firebaseConfig from './firebase.config';
+// import firebaseConfig from './firebase.config';
 import CreateSection from './components/CreateSection';
 import courseData from './components/coursesData';
-import Video2 from './components/video2';
-import Video1 from './components/video1';
-// import ShowQuiz from './components/quizComponents/showingQuiz'
-firebase.initializeApp(firebaseConfig);
-
-// import Stories from './components/stories';
-
-
-
-
+// import config from './Firebase';
+import Show from './components/Show';
+import Display from './components/showSections';
+import Single from './components/singleCourse';
+// var mainApp = firebase.initializeApp(firebaseConfig);
+// var secondaryApp = firebase.initializeApp({config},"secondary");
+// firebase.initializeApp(config);
 class App extends Component {
 constructor(props){
   super(props);
@@ -44,11 +40,10 @@ constructor(props){
     responses:0,
     authorized:true,
     courseData,
-   
+    
     user:''
   }
   }
-
 computeAnswer = (answer,correctAnswer) => {
   if(answer === correctAnswer){
     this.setState({
@@ -59,17 +54,13 @@ computeAnswer = (answer,correctAnswer) => {
     responses:this.state.responses + 1
   })
 }
-
 playAgain = () => {
   this.setState({
     score:0,
     responses:0
   })
 }
-
-
    
-
   componentDidMount(){
     firebase.auth().onAuthStateChanged(user=>{
       if(user){
@@ -108,7 +99,7 @@ playAgain = () => {
             <Route  path='/signup' render={props =>(
               <React.Fragment>
                 <HeaderAuth />
-                {/* <Headersignup {...props} name={this.state.user}/> */}
+                {/* <Headersignup/> */}
                 <Register />
               </React.Fragment>
             )} />
@@ -122,83 +113,53 @@ playAgain = () => {
             <Route  path='/courses' render={props =>(
               <React.Fragment>
                 <Headersignup {...props} name={this.state.user}/>
-                <Courses courses={this.state.courseData}/>  
+                <Show />
+                {/* <Courses courses={this.state.courseData}/>   */}
               </React.Fragment>
             )} />
             
-                 <Route  path='/courseId/Sections' render={props =>(
-                  <React.Fragment>
-                    <Headersignup {...props} name={this.state.user} />
-                  <Sections/>
-                      
-                  </React.Fragment>
-                )} />
-                <Route  path='/Course' render={props =>(
-                  <React.Fragment>
-                    <Headersignup {...props} name={this.state.user} />
-                  <Video1/>
-                      
-                  </React.Fragment>
-                )} />  
-                <Route  path='/Coursess' render={props =>(
-                  <React.Fragment>
-                    <Headersignup {...props} name={this.state.user}/>
-                  <Video2/>
-                      
-                  </React.Fragment>
-                )} /> 
-        
-        <PrivateRouteLogin exact path='/login' authed={this.state.authorized} component={Login} />
+            <PrivateRouteLogin exact path='/login' authed={this.state.authorized} component={Login} />
          
         
-        <Route  path='/signup' render={props =>(
-          <React.Fragment>
-         <HeaderAuth/>
-        <Register />
-          </React.Fragment>
-        )} />
-        <PrivateRoute  path='/welcome' authed={this.state.authorized} 
-        // component={Welcome} /> 
-        component={() => <Welcome user={this.state.user}  />} />
-        <Route exact path='/:user/createcourse' 
-        render={props =>(
-          <React.Fragment>
-            <Headersignup {...props} name={this.state.user}/>
-        <CreateCourse {...props} userId={this.state.user}/>
-
-          </React.Fragment>
-        )} />
-        <Route path='/:userId/course/:courseId/sections' render={props =>(
-          <React.Fragment>
-            <Headersignup {...props} name={this.state.user}/>
-        <CreateSection {...props} userId={this.state.user}/>
-
-          </React.Fragment>
-        )} />
-         {/* <Route  path='/Learner' render={props =>(
-          <React.Fragment>
-            <Headersignup {...props} name={this.state.user} />
-            <Learner />
-          
-          </React.Fragment>
-        )} /> */}
-
-      <Route  path='/Courses' render={props =>(
-          <React.Fragment>
-            <Headersignup />
-        <Courses/>
-
-          </React.Fragment>
-        )} />
-
-{/* <Route  path='/video' render={props =>(
-          <React.Fragment>
-            <Headersignup />
-        <Video/>
-
-          </React.Fragment>
-        )} /> */}
-        <Route path='/quiz' render={props =>(
+         <Route  path='/signup' render={props =>(
+           <React.Fragment>
+          <HeaderAuth/>
+         <Register />
+           </React.Fragment>
+         )} />
+         <PrivateRoute  path='/welcome' authed={this.state.authorized} 
+         // component={Welcome} /> 
+         component={() => <Welcome user={this.state.user}  />} />
+         <Route exact path='/:user/createcourse' 
+         render={props =>(
+           <React.Fragment>
+             <Headersignup {...props} name={this.state.user}/>
+              <CreateCourse {...props} userId={this.state.user}/>
+           </React.Fragment>
+         )} />
+         <Route path='/:userId/course/:courseId/sections' render={props =>(
+           <React.Fragment>
+             <Headersignup {...props} name={this.state.user}/>
+         <CreateSection {...props} userId={this.state.user}/>
+           </React.Fragment>
+         )} />
+ 
+                 <Route  path='/:courseId/Sections' render={props =>(
+                  <React.Fragment>
+                    <Headersignup {...props} name={this.state.user} />
+                    {/* <Display /> */}
+                    <Single data={this.state.courseData} {...props}/>  
+                  </React.Fragment>
+                )} />
+                <Route  path='/:courseId/:videoId/Sections' render={props =>(
+                  <React.Fragment>
+                    <Headersignup {...props} name={this.state.user} />
+                   {/* <Headersignup /> */}
+                   {/* <Sections {...props}/> */}
+                   <Single data={this.state.courseData} {...props}/>
+                  </React.Fragment>
+                )} />  
+                <Route path='/quiz' render={props =>(
           <React.Fragment>
             <Headersignup  {...props} name={this.state.user}/>
             <div className="quizcontainer">
@@ -228,10 +189,25 @@ playAgain = () => {
             </div>
           </React.Fragment>
         )} />
-        </Switch>
-       </Router>
+        <Route path='/show/:id' component={Show} />
+          </Switch>
+        </Router>
+       
       </div>
     );
   }
 }
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
