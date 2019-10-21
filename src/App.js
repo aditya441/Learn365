@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route ,Switch} from 'react-router-dom';
 
 import './App.css';
+import Showing from './components/quizComponents/showingQuiz';
 import QuestionBox from './components/quizComponents/QuestionBox';
 import Addquiz from './components/quizComponents/addQuiz';
 import Register from './components/registration';
@@ -25,7 +26,7 @@ import CreateSection from './components/CreateSection';
 import courseData from './components/coursesData';
 import Video2 from './components/video2';
 import Video1 from './components/video1';
-import ShowQuiz from './components/quizComponents/showingQuiz'
+// import ShowQuiz from './components/quizComponents/showingQuiz'
 firebase.initializeApp(firebaseConfig);
 
 // import Stories from './components/stories';
@@ -37,6 +38,7 @@ class App extends Component {
 constructor(props){
   super(props);
   this.state={
+    data:[],
     quiz:quizData,
     score:0,
     responses:0,
@@ -214,6 +216,15 @@ playAgain = () => {
           <React.Fragment>
             <Headersignup {...props} name={this.state.user}/>
             <Addquiz {...props} userId={this.state.user} />
+          </React.Fragment>
+        )} />
+         <Route path='/anotherquiz' render={props =>(
+          <React.Fragment>
+            <Headersignup  {...props} name={this.state.user}/>
+            <div className="quizcontainer">
+              <div className="title">Quiz</div>
+              <Showing data = {this.state.data}/>
+            </div>
           </React.Fragment>
         )} />
         </Switch>
