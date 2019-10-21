@@ -348,20 +348,8 @@ a:focus{
   min-width: 400px;
   height: 100vh;
   /* max-width: 250px; */
-<<<<<<< HEAD
   /* background: rgb(170, 43, 128); */
   background:#334450;
-||||||| merged common ancestors
-  background: rgb(117, 41, 64);
-  /* background:url('./color.jpg'); */
-  /* background: #7386D5; */
-=======
-  background: rgb(117, 41, 64);
-  /* background:  #242c35; */
-   /* background:  #191d22; */
-  /* background:url('./color.jpg'); */
-  /* background: #7386D5; */
->>>>>>> 02ebd516ae23df196975e3d153c26b07607658c3
   color: #fff;
   transition: all 0.3s;
   background-size:cover;
@@ -372,14 +360,7 @@ a:focus{
 } */
 #sidebar .sidebar-header {
   padding: 20px;
-<<<<<<< HEAD
   background:  #2e3d49;
-||||||| merged common ancestors
-  background:rgb(117, 41, 64);
-=======
-  background:rgb(117, 41, 64);
-  /* background: #11161a; */
->>>>>>> 02ebd516ae23df196975e3d153c26b07607658c3
   /* background:rgb(192,23,80); */
   /* background: #6d7fcc; */
   font-weight: bold;

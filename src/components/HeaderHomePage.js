@@ -8,7 +8,7 @@ export class HeaderHomePage extends Component {
     render() {
         return (
           <nav className="headerHomePage navbar navbar-expand-md  navbar-light sticky-top">
-          <a className="navbar-brand" href="#">Learn365</a>
+          <Link exact to='/' className="navbar-brand" href="#">Learn365</Link>
           <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
             <span className="navbar-toggler-icon"></span>
           </button>

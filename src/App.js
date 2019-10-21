@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route ,Switch} from 'react-router-dom';
 
 import './App.css';
 import QuestionBox from './components/quizComponents/QuestionBox';
+import Addquiz from './components/quizComponents/addQuiz';
 import Register from './components/registration';
 import Result from './components/quizComponents/Result';
 import Login from './components/login';
@@ -22,24 +23,10 @@ import quizData from './components/quizData.json';
 import firebaseConfig from './firebase.config';
 import CreateSection from './components/CreateSection';
 import courseData from './components/coursesData';
-<<<<<<< HEAD
 import Videos from './components/videos';
 import Single from './components/singleCourse';
 
 
-||||||| merged common ancestors
-import Video2 from './components/video2';
-import Video1 from './components/video1';
-=======
-import Video2 from './components/video2';
-import Video1 from './components/video1';
-firebase.initializeApp(firebaseConfig);
-
-// import Stories from './components/stories';
-
-
-
->>>>>>> 02ebd516ae23df196975e3d153c26b07607658c3
 
 class App extends Component {
 constructor(props){
@@ -113,7 +100,8 @@ playAgain = () => {
             <PrivateRouteLogin exact path='/login' authed={this.state.authorized} component={Login} />
             <Route  path='/signup' render={props =>(
               <React.Fragment>
-                <Headersignup/>
+                <HeaderAuth />
+                {/* <Headersignup {...props} name={this.state.user}/> */}
                 <Register />
               </React.Fragment>
             )} />
@@ -133,60 +121,18 @@ playAgain = () => {
             
                  <Route  path='/:courseId/Sections' render={props =>(
                   <React.Fragment>
-<<<<<<< HEAD
                     <Headersignup />
                     <Single data={this.state.courseData} {...props}/>  
-||||||| merged common ancestors
-                    <Headersignup />
-                  <Sections/>
-                      
-=======
-                    <Headersignup {...props} name={this.state.user} />
-                  <Sections/>
-                      
->>>>>>> 02ebd516ae23df196975e3d153c26b07607658c3
                   </React.Fragment>
                 )} />
 
                 <Route  path='/:courseId/:videoId/Sections' render={props =>(
                   <React.Fragment>
-<<<<<<< HEAD
                   <Headersignup />
                   <Single data={this.state.courseData} {...props}/>
-||||||| merged common ancestors
-                    <Headersignup />
-                  <Video1/>
-                      
-=======
-                    <Headersignup {...props} name={this.state.user} />
-                  <Video1/>
-                      
->>>>>>> 02ebd516ae23df196975e3d153c26b07607658c3
                   </React.Fragment>
                 )} />  
-<<<<<<< HEAD
-                
-          </Switch>
-        </Router>
-||||||| merged common ancestors
-                <Route  path='/Coursess' render={props =>(
-                  <React.Fragment>
-                    <Headersignup />
-                  <Video2/>
-                      
-                  </React.Fragment>
-                )} /> 
-        
-          </Switch>
-        </Router>
-=======
-                <Route  path='/Coursess' render={props =>(
-                  <React.Fragment>
-                    <Headersignup {...props} name={this.state.user}/>
-                  <Video2/>
-                      
-                  </React.Fragment>
-                )} /> 
+
         
         <PrivateRouteLogin exact path='/login' authed={this.state.authorized} component={Login} />
          
@@ -253,12 +199,15 @@ playAgain = () => {
             </div>
           </React.Fragment>
         )} />
+        <Route path='/:userId/course/:courseId/addQuiz' render={props => (
+          <React.Fragment>
+            <Headersignup {...props} name={this.state.user}/>
+            <Addquiz {...props} userId={this.state.user} />
+          </React.Fragment>
+        )} />
         </Switch>
        </Router>
-          {/* </Switch>
-        </Router> */}
->>>>>>> 02ebd516ae23df196975e3d153c26b07607658c3
-       
+
       </div>
     );
   }
