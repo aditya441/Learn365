@@ -14,7 +14,9 @@
 // firebase.initializeApp(config);
 // firebase.firestore().settings(settings);
 
-export default {
+
+
+var firebaseConfig =  {
     apiKey: "AIzaSyAXcNlVjLagzvptZQkwsA8SlzUBOOgtRIg",
     authDomain: "learn365-c6d73.firebaseapp.com",
     databaseURL: "https://learn365-c6d73.firebaseio.com",
@@ -24,3 +26,6 @@ export default {
     appId: "1:184543323689:web:12a69b6f9d5a2e0b869e38",
     measurementId: "G-FQ6XLBE5RT"
   };
+  
+  // module.exports.myApp = FbApp.database();
+  export default firebaseConfig;

@@ -5,8 +5,9 @@ import firebase from "firebase";
 // import firestore from 'firebase/firestore';
 // firebase.firestore().settings(settings);
 // import { Redirect } from 'react-router-dom'
-// import firebaseConfig from '../firebase.config';
+import firebaseConfig from '../firebase.config';
 // firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 class CreateCourse extends Component {
   constructor(props) {
