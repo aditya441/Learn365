@@ -8,7 +8,7 @@ class Single extends Component {
     render () {
         return (
             <div>
-                {console.log(this.props.match.params.videoId)}
+                {/* {console.log(this.props.match.params.videoId)} */}
                {this.props.data.map(course => (
                    <div>
                        {this.state.id === course.course_id && (

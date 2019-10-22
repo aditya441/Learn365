@@ -54,11 +54,8 @@ class Show extends Component {
             <th><Link to={`/${this.props.user.displayName}/MyCourse/`}> My Courses</Link></th>
             <th>Archived</th>
           </tr>
-        </nav>
-        
-                
-             
-        <div className="card-wrapper">
+        </nav>          
+        <div className="main-box">
           {this.state.courses.map(board =>
             <div className="box">
               <div className="card-image">

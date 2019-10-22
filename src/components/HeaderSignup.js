@@ -47,6 +47,27 @@ class HeaderSignup extends Component {
               </Link>
             </li>
             */}
+              <li className='nav-item'>
+
+              
+            <div className="dropdown">
+               <div className="dropdown-toggle" data-toggle="dropdown">
+                 <img
+                   src={userDummyPic}
+                   alt="user-dummy-pic"
+                   className="userDummyPic"
+                 />
+                 {console.log("user", this.props.name.uid )}
+                 <span className="userName"> {this.props.name.displayName}</span>
+               </div>
+               <div className="dropdown-menu">
+                 <a className="dropdown-item" href="#">
+                  Profile
+                 </a>
+                 <Link to='/'
+               onClick={()=> firebase.auth().signOut()} className="dropdown-item" href="#"><span className="fas fa-sign-in-alt"></span> Sign Out
+              </Link>
+                 {/* <a
             <li className="nav-item">
               <div className="dropdown">
                 <div className="dropdown-toggle" data-toggle="dropdown" style={{ cursor: "pointer" }}>
