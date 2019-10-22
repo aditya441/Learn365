@@ -31,8 +31,8 @@ import Single from './components/singleCourse';
 // var mainApp = firebase.initializeApp(firebaseConfig);
 // var secondaryApp = firebase.initializeApp({config},"secondary");
 // firebase.initializeApp(config);
-import artistData from './components/artistData';
-import Artist from './components/artist';
+// import artistData from './components/artistData';
+// import Artist from './components/artist';
 
 class App extends Component {
 constructor(props){
@@ -44,7 +44,7 @@ constructor(props){
     responses:0,
     authorized:true,
     courseData,
-    artistData,
+    
     
     user:''
   }
