@@ -59,9 +59,9 @@ export class showingQuiz extends Component {
                 <div className="title">Quiz</div>
                 {this.state.responses < this.state.data.length && 
                 this.state.data.map((question)=> (
-                    <QuestionBox question={question.questionName} option={question.optionArray} selected={answer => this.computeAnswer(answer,question.correctAnswer)}/>
+                    <QuestionBox question={question.questionName} option={question.options} selected={answer => this.computeAnswer(answer,question.answer)}/>
                 ))}
-                {this.state.responses === this.state.data.length ? (<Result responses={this.state.data.length} score={this.state.score} playAgain={this.playAgain}/>) : null}
+                {this.state.responses === 3 ? (<Result responses={this.state.data.length} score={this.state.score} playAgain={this.playAgain}/>) : null}
             </div>
         )
     }

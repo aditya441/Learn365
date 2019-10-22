@@ -32,7 +32,7 @@ class Sections extends Component {
     return (
       <div className="wrapper" id="wrapper">
         {console.log(this.state.videoId)}
-        <nav id="sidebar">
+        <nav id="sidebar" >
           <h3 class="_sidebar--header--2BaH_">
             <a href="/courses">
                 <h11>Sections</h11>

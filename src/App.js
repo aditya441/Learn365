@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Route ,Switch} from 'react-router-dom';
 import './App.css';
 import Addquiz from './components/quizComponents/addQuiz';
 import Showing from './components/quizComponents/showingQuiz';
-import QuestionBox from './components/quizComponents/QuestionBox';
+// import QuestionBox from './components/quizComponents/QuestionBox';
 import Register from './components/registration';
 import Result from './components/quizComponents/Result';
 import Login from './components/login';
 import Welcome from './components/welcomePage';
 import Courses from './components/Courses';
+import MyCourse from './components/MyCourse'
 import Sections from './components/Sections';
 import Header from './components/Header';
 import Homepage from './components/Homepage';
@@ -30,6 +31,7 @@ import Single from './components/singleCourse';
 // var mainApp = firebase.initializeApp(firebaseConfig);
 // var secondaryApp = firebase.initializeApp({config},"secondary");
 // firebase.initializeApp(config);
+
 class App extends Component {
 constructor(props){
   super(props);
@@ -40,7 +42,6 @@ constructor(props){
     responses:0,
     authorized:true,
     courseData,
-    
     user:''
   }
   }
@@ -59,8 +60,7 @@ playAgain = () => {
     score:0,
     responses:0
   })
-}
-   
+} 
   componentDidMount(){
     firebase.auth().onAuthStateChanged(user=>{
       if(user){
@@ -99,24 +99,26 @@ playAgain = () => {
             <Route  path='/signup' render={props =>(
               <React.Fragment>
                 <HeaderAuth />
-                {/* <Headersignup/> */}
+                
                 <Register />
               </React.Fragment>
             )} />
-            {/* <PrivateRoute  path='/welcome' authed={this.state.authorized} component={Welcome} />  */}
-            {/* <Route exact path='/createcourse' render={props =>(
-              <React.Fragment>
-                <Headersignup/>
-                <CreateCourse />
-              </React.Fragment>
-            )} /> */}
             <Route  path='/courses' render={props =>(
               <React.Fragment>
+                {/* <Artist data={this.state.artistData}/> */}
                 <Headersignup {...props} name={this.state.user}/>
-                <Show />
-                {/* <Courses courses={this.state.courseData}/>   */}
+                <Show user={this.state.user}/> 
+  
               </React.Fragment>
             )} />
+            <Route path='/:userId/MyCourse' render={props=>(
+              <React.Fragment>
+              <Headersignup {...props} name={this.state.user}/>
+              <MyCourse {...props} user={this.state.user}/>
+              {/* <Courses courses={this.state.courseData}/>   */}
+            </React.Fragment>
+            )} />
+
             
             <PrivateRouteLogin exact path='/login' authed={this.state.authorized} component={Login} />
          
@@ -140,23 +142,23 @@ playAgain = () => {
          <Route path='/:userId/course/:courseId/sections' render={props =>(
            <React.Fragment>
              <Headersignup {...props} name={this.state.user}/>
-         <CreateSection {...props} userId={this.state.user}/>
+          <CreateSection {...props} userId={this.state.user}/>
            </React.Fragment>
          )} />
  
                  <Route  path='/:courseId/Sections' render={props =>(
                   <React.Fragment>
+
                     <Headersignup {...props} name={this.state.user} />
-                    {/* <Display /> */}
-                    <Single data={this.state.courseData} {...props}/>  
+                    <Display {...props}/>
+                    {/* <Single data={this.state.courseData} {...props}/>   */}
                   </React.Fragment>
                 )} />
                 <Route  path='/:courseId/:videoId/Sections' render={props =>(
                   <React.Fragment>
                     <Headersignup {...props} name={this.state.user} />
-                   {/* <Headersignup /> */}
-                   {/* <Sections {...props}/> */}
-                   <Single data={this.state.courseData} {...props}/>
+                   <Display {...props}/>
+                   {/* <Single data={this.state.courseData} {...props}/> */}
                   </React.Fragment>
                 )} />  
                 {/* <Route path='/quiz' render={props =>(
@@ -180,7 +182,7 @@ playAgain = () => {
             <Addquiz {...props} userId={this.state.user} />
           </React.Fragment>
         )} />
-         <Route path='/:userId/course/:courseId/anotherquiz' render={props =>(
+         <Route path='/:courseId/takequiz' render={props =>(
           <React.Fragment>
             <Headersignup  {...props} name={this.state.user}/>
             <div className="quizcontainer">

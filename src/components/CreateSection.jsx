@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import AddVedio from "./AddVedio";
+import Addvideo from "./AddVideo";
 import firebase from "firebase";
+const uuidv1 = require('uuid/v1');
 // import { Link } from "react-router-dom";
 class CreateSection extends Component {
   constructor(props) {
@@ -12,16 +13,18 @@ class CreateSection extends Component {
       courseId: this.props.match.params.courseId,
       sectionName: "",
       videos: [],
-      vedioName: "",
-      vedioUrl: "",
+      videoName: "",
+      videoUrl: "",
+      videoId:'',
       courseName: "",
       sections: [],
-      name: "",
+      name: [],
       data: [],
       v: [],
       saveClicked: false,
       addSection:false,
-      user : this.props.match.params.userId
+      user : this.props.match.params.userId,
+      sectionsData: []
     };
   }
   
@@ -31,18 +34,18 @@ class CreateSection extends Component {
     this.setState(state);
   };
   onTitleChange = e => {
-    this.setState({ vedioName: e.target.value });
+    this.setState({ videoName: e.target.value });
   };
   onUrlChange = e => {
   
 
-      this.setState({ vedioUrl: e.target.value });
+      this.setState({ videoUrl: e.target.value });
     
   };
   addClicked = () => {
     // console.log("add clicked");
     const regexp =  /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
-    if (!regexp.test(this.state.vedioUrl))
+    if (!regexp.test(this.state.videoUrl))
     {
       
           document.querySelector(".errorMsg").style.display = "block";
@@ -54,21 +57,23 @@ class CreateSection extends Component {
     else
     {
 
-      if(this.state.vedioName===''){
+      if(this.state.videoName===''){
         document.querySelector(".errorMsg").style.display = "block";
         document.querySelector(".errorMsg").textContent =
           "Please enter all the details";
       }else{
         document.querySelector(".errorMsg").style.display = "none";
         this.state.videos.push({
-          vedioName: this.state.vedioName,
-          vedioUrl: this.state.vedioUrl
+          videoName: this.state.videoName,
+          videoUrl: this.state.videoUrl,
+          videoId:uuidv1()
         });
         this.state.v.push({
-          vedioName: this.state.vedioName,
-          vedioUrl: this.state.vedioUrl
+          videoName: this.state.videoName,
+          videoUrl: this.state.videoUrl,
+          videoId:uuidv1()
         });
-        this.setState({ vedioName: "", vedioUrl: "" });
+        this.setState({ videoName: "", videoUrl: "",videoId:'' });
       }
      
       
@@ -84,8 +89,8 @@ class CreateSection extends Component {
     } else{
       this.setState({ saveClicked: true });
       this.setState({addSection:true});
-      
-      this.setState({ name: this.state.sectionName });
+      this.state.sectionsData.push({section: this.state.sectionName, video: this.state.v})
+      this.setState({ name: this.state.sectionsData });
       document.querySelector(".errorMsg").style.display = "none";
 
     }
@@ -103,6 +108,7 @@ class CreateSection extends Component {
     e.preventDefault();
       // this.setState({ saveClicked: false });
     this.setState({addSection:false})
+    this.setState({v:[]})
     document.querySelector(".errorMsg").style.display = "none";
     
     // this.setState({ name: this.state.sectionName });
@@ -119,8 +125,10 @@ class CreateSection extends Component {
         //   console.log(docRef)
         this.setState({
           sectionName: "",
-          vedioName: "",
-          vedioUrl: "",
+          videoName: "",
+          videoUrl: "",
+          videos:[]
+          // v:''
           // sectionId:docRef.id,
         });
         this.state.sectionId.push(docRef.id);
@@ -193,25 +201,31 @@ class CreateSection extends Component {
           <div className="sections">
             {this.state.saveClicked === true && (
               <div className="single-section">
-                <ul className="section-list">
-                  <li>
-                    {this.state.name}
-                    {console.log("v : ", this.state.v)}
-                  </li>
-                </ul>
-                {this.state.v.map(video => (
-                  <div className="vedioName">
-                    <ul>
-                      <li>
-                        <span className="v">Video </span>
-                        &nbsp; {video.vedioName}
-                        <span className="u"> Url </span>
-                        &nbsp; {video.vedioUrl}
-                        {console.log("VideoName :", video.vedioUrl)}
-                      </li>
+                  {this.state.name.map(item => (
+                    <div>
+                  <ul className="section-list">
+                    <li>
+                      {item.section}
+                    </li>
                     </ul>
-                  </div>
-                ))}
+                {/* <li> */}
+                  {item.video.map(video => (
+                    <div className="videoName">
+                      <ul>
+                        <li>
+                          <span className="v">Video </span>
+                          &nbsp; {video.videoName}
+                          <span className="u"> Url </span>
+                          &nbsp; {video.videoUrl}
+                          {console.log("VideoName :", video.videoUrl)}
+                        </li>
+                      </ul>
+                    </div>
+                  ))}
+                {/* </li> */}
+                </div>
+                  ))} 
+                  {/* </ul> */}
               </div>
              )} 
             {this.state.data.map(section => (
@@ -221,16 +235,16 @@ class CreateSection extends Component {
                   <li>{section.sectionName}</li>
                 </ul>
 
-                {console.log("vedio : ", section.videos)}
+                {console.log("video : ", section.videos)}
 
                 {section.videos.map(video => (
-                  <div className="vedioName">
+                  <div className="videoName">
                     <ul>
                       <li>
                         <span className="v">Video </span>
-                        &nbsp; {video.vedioName}
+                        &nbsp; {video.videoName}
                         <span className="u"> Url </span>
-                        &nbsp; {video.vedioUrl}
+                        &nbsp; {video.videoUrl}
                       </li>
                     </ul>
 
@@ -278,7 +292,7 @@ class CreateSection extends Component {
           {/* {this.state.onClick.map(() => ( */}
             {this.state.addSection===true && (
 
-            <AddVedio
+            <Addvideo
               value={this.state}
               titleChanged={this.onTitleChange}
               urlChanged={this.onUrlChange}

@@ -126,6 +126,9 @@ export class addQuiz extends Component {
         });
       });
   };
+  onContinue = () => {
+    window.location = `/welcome`;
+  };
   render() {
     return (
       <div className="quiz">
@@ -246,9 +249,14 @@ export class addQuiz extends Component {
                       </textarea>{" "}
                     </div>
                   </div>
-                  <center><button type="submit" className="btn btn-success quizbutton">
+                  <center><button type="submit" className="btn btn-danger quizbutton">
                     Submit
-                  </button></center><hr />
+                  </button>
+                  {"       "}
+                  <button type="submit" className="btn btn-danger quizbutton ml-5" onClick={this.onContinue}>
+                    Continue
+                  </button>
+                  </center><hr />
                 </div>
 
                 <div className="appendQuiz">

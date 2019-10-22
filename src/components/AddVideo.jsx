@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-class AddVedio extends Component {
+class Addvideo extends Component {
   constructor(props) {
     super(props);
     // this.handleChange = this.handleChange.bind(this);
     this.state = {
-      vedioName:'',
-      vedioUrl:''
+      videoName:'',
+      videoUrl:''
     };
   }
 
@@ -21,39 +21,39 @@ class AddVedio extends Component {
       <div>
           <form >
 
-        <div className="vedio-detail">
-          <div className="form-inline vedio-title">
-            <label htmlFor="" className="col-xs-2 vedio-title">
+        <div className="video-detail">
+          <div className="form-inline video-title">
+            <label htmlFor="" className="col-xs-2 video-title">
               Video title
             </label>{" "}
             <input
-                value={this.props.value.vedioName}
+                value={this.props.value.videoName}
               onChange={this.props.titleChanged}
               //   {() => {
-            // this.props.handleChange(this.props.vedioName);
+            // this.props.handleChange(this.props.videoName);
             //   }}
               type="text"
               className="form-control col-xs-6 course-input"
-              name="vedioName"
+              name="videoName"
               placeholder="Enter video title"
               required
               />
           </div>
           <div className="form-inline">
-            <label htmlFor="" className="col-xs-2 vedio-url">
+            <label htmlFor="" className="col-xs-2 video-url">
               Video Url
             </label>{" "}
             <input
                 
-              value={this.props.value.vedioUrl}
+              value={this.props.value.videoUrl}
               onChange={this.props.urlChanged}
             //   {()=>{
-            //       this.props.handleChange(this.props.vedioUrl);
+            //       this.props.handleChange(this.props.videoUrl);
             //   }}
             type="url"
             pattern="https?://.+"
             className="form-control col-xs-6 course-input"
-            name="vedioUrl"
+            name="videoUrl"
             placeholder="Enter video url"
               required
               />
@@ -73,4 +73,4 @@ class AddVedio extends Component {
   }
 }
 
-export default AddVedio;
+export default Addvideo;

@@ -8,13 +8,14 @@ import firebase from 'firebase';
 // import fireConfig from '../Firebase';
 // var secondaryApp = firebase.initializeApp(fireConfig,"secondary");
 
-import secondaryApp from '../Firebase';
+// import secondaryApp from '../Firebase';
 
 
 class Show extends Component {
   constructor(props) {
     super(props);
-    this.ref = secondaryApp.firestore().collection('courses');
+    // this.ref = secondaryApp.firestore().collection('courses');
+    this.ref = firebase.firestore().collection('courses');
     this.unsubscribe = null;
     this.state = {
       courses: [],
@@ -46,19 +47,16 @@ class Show extends Component {
   render() {
     return (
       <div>
-        <nav className="course-header">
-          <h3>My Courses</h3>
+        <nav className="course-header" >
+          <h3>Welcome</h3>
           <tr className="course-header-list">
-            <th>All Courses</th>
-            <th><a href='/welcome' >Collections</a></th>
-            <th>Wishlist</th>
-            <th>Archived</th>
+            <th style={{fontWeight:'bolder'}}>All Courses</th>
+            
+            <th><Link to={`/${this.props.user.displayName}/MyCourse/`}> My Courses</Link></th>
+           
           </tr>
-        </nav>
-        
-                
-             
-        <div className="card-wrapper">
+        </nav>          
+        <div className="main-box">
           {this.state.courses.map(board =>
             <div className="box">
               <div className="card-image">
@@ -67,13 +65,13 @@ class Show extends Component {
               <span className="course-body"> 
               <h7><Link to={`/show/${board.key}`}>{board.courseName}</Link></h7>
               {/* <p>{board.courseDesc}</p> */}
-              <p>Learn 365 Team,Official Learn 365 Instructor Acoount</p>
+              <p>Learn 365 Team,Official Learn 365 Instructor Account</p>
               </span> 
               
               <div className="course-footer">
-              <div className="progress">
+              {/* <div className="progress">
                  <p>progress bar</p>
-              </div>
+              </div> */}
               <Link to={`/${board.key}/Sections`}>
               <button type="button" class="btn btn-danger btn-sm">Start Course</button>
               </Link>
