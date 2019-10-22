@@ -50,15 +50,12 @@ class Show extends Component {
           <h3>My Courses</h3>
           <tr className="course-header-list">
             <th>All Courses</th>
-            <th><a href='/welcome' >Collections</a></th>
+            <th><a href='/courses' >Collections</a></th>
             <th>Wishlist</th>
             <th>Archived</th>
           </tr>
-        </nav>
-        
-                
-             
-        <div className="card-wrapper">
+        </nav>          
+        <div className="main-box">
           {this.state.courses.map(board =>
             <div className="box">
               <div className="card-image">

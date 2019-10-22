@@ -52,6 +52,7 @@ render(){
                    alt="user-dummy-pic"
                    className="userDummyPic"
                  />
+                 {console.log("user", this.props.name.uid )}
                  <span className="userName"> {this.props.name.displayName}</span>
                </div>
                <div className="dropdown-menu">

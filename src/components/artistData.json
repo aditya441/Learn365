@@ -1,0 +1,40 @@
+[
+    {
+      "artistName": "artist1",
+      "songs": [
+        {
+          "title": "song1",
+          "src": "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+        },
+        {
+          "title": "song2",
+          "src": "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+        },
+        {
+          "title": "song3",
+          "src": "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+        }
+      ]
+    },
+    {
+
+    
+      "artistName": "artist2",
+      "songs": [
+        {
+          "title": "song4",
+          "src": "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+        },
+        {
+          "title": "song5",
+          "src": "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+        },
+        {
+          "title": "song6",
+          "src": "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+        }
+      ]
+    }
+  
+  ]
+

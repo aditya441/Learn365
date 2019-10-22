@@ -325,6 +325,8 @@ b,strong {
   box-shadow:5px 10px #bebabac0;
   background-image: url('white.jpg');
 }
+
+
 .text-left {
   text-align: left;
   margin-left: 50px;
@@ -350,12 +352,13 @@ a:focus{
   background-size: cover;
 }
 #sidebar {
-  min-width: 400px;
+  min-width: 300px;
   height: 100vh;
   /* max-width: 250px; */
   /* background: rgb(170, 43, 128); */
-  background:#334450;
-  color: #fff;
+  /* background:#334450; */
+  background: rgb(232, 234, 250);
+  color:black;
   transition: all 0.3s;
   background-size:cover;
   overflow: auto;
@@ -365,7 +368,8 @@ a:focus{
 } */
 #sidebar .sidebar-header {
   padding: 20px;
-  background:  #2e3d49;
+  background: rgb(232, 234, 250);
+  /* background:  #2e3d49; */
   /* background:rgb(192,23,80); */
   /* background: #6d7fcc; */
   font-weight: bold;
@@ -620,11 +624,12 @@ i {
   border: transparent;
   border-radius: .25rem;
 } */ */
-.card-wrapper {
-  margin: 0 10rem 0 10rem;
+.main-box {
+  width: 100vw;
+  background-color: skyblue;
   display: flex;
   flex-flow: wrap;
-  
+  justify-content: space-evenly;
 }
 .box {
   transition: box-shadow .3s;
@@ -687,12 +692,13 @@ i {
   font-weight: bold;
 }
 .course-footer {
-  height: 100px;
+  height: 150px;
   font-size: 0.8rem;
   color: #007791;
   padding-left: 10px;
-  /* margin-top: -10px; */
+ 
 }
+
 #section1Submenu {
   margin-left: 2rem;
   padding-top: 35px;
@@ -708,11 +714,45 @@ i {
   width: 100vw;
   padding-right: 5rem;
   padding-top: 0.2rem;
-  background: rgb(232, 234, 250)
+  background: #334450;
+  /* background: rgb(232, 234, 250) */
   /* background:  #2e3d49; */
   /* background:  #1c262f; */
 }
 ._sidebar--header--2BaH_  p {
   padding-top: 20px;
   font-size: 1.2rem;
+}
+.card-wrapper {
+  background-color: red ;
+}
+.active {
+  border: 1px solid white;
+  background-color: #cbd7f3;
+  color: black;
+  /* display:flex;
+  flex-direction: column; */
+  text-align: start;
+ padding-left: 5px;
+  margin-bottom: -16px
+}
+.active a {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-evenly; */
+  padding-top: 5px;
+}
+.active  .dropdown-toggle{
+  padding-top: 10px;
+  font-weight: bold; 
+}
+.video-box {
+  display: flex;
+  flex-direction: row;
+  padding-left: 1rem
+}
+.video-box input {
+  margin-right: 10px;
+  margin-top: 10px;
+  
 }
