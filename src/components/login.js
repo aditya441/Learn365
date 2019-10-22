@@ -63,10 +63,10 @@ window.location='./welcome'
                 <form className="login-form text-center">
                     <h4 className="mb-5 text-uppercase loginText">Login</h4>
                     <div className="form-group">
-                        <input type="email" onChange={this.emailChanged} name="email" className="form-control rounded-pill form-control-lg" placeholder="Username"/>
+                        <input type="email" onChange={this.emailChanged} name="email" className="form-control rounded-pill form-control-lg " placeholder="Username"/>
                     </div>
                     <div className="form-group">
-                        <input type="password" onChange={this.passChanged} name="pass"className="form-control rounded-pill form-control-lg" placeholder="Password"/>
+                        <input type="password" onChange={this.passChanged} name="pass"className="form-control rounded-pill form-control-lg " placeholder="Password"/>
                     </div>
                     <div className="forgot-link d-flex align-items-center justify-content-between">
                         <div className="form-check">

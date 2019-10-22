@@ -11,7 +11,7 @@ class Section extends Component {
     return (
       <div>
         {/* {console.log(this.props.section)} */}
-        {console.log(this.props.checked)}
+        {/* {console.log(this.props.checked)} */}
         <ul className="list-unstyled components">
             <li className="active">
               <a href={`#${this.props.section.key}`} data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">{this.props.section.sectionName}</a>

@@ -80,14 +80,12 @@ class MyCourse extends Component {
     return (
       <div>
         <nav className="course-header">
-          <h3>My Courses</h3>
+          <h3>Welcome</h3>
           <tr className="course-header-list">
             <th><Link to={'/Courses'}>All Courses</Link></th>
-            <th>
-              <a href="/welcome">Collections</a>
-            </th>
-            <th><Link to={`/${this.props.user.displayName}/MyCourse/`}> My Courses </Link></th>
-            <th>Archived</th>
+            
+            <th style={{fontWeight:'bolder'}}><Link to={`/${this.props.user.displayName}/MyCourse/`}> My Courses </Link></th>
+           
           </tr>
         </nav>
 

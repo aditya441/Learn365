@@ -29,7 +29,7 @@ margin-bottom: 20px;
     padding-right: 50px;
     /* border:1px solid green; */
 }
-.vedio-detail{
+.video-detail{
     padding-left:30px;
     padding-right: 80px;
     display: flex;
@@ -63,14 +63,14 @@ margin-bottom: 20px;
     font-size: 25px;
     color: #29303b
 }
-.vedio-title{
+.video-title{
     font-family:open sans,helvetica neue,Helvetica,Arial,sans-serif;
     /* font-weight: 300; */
     /* font-size: 15px; */
     color: #eff2f7;
     margin-right: 20px;
 }
-.vedio-url{
+.video-url{
     font-family:open sans,helvetica neue,Helvetica,Arial,sans-serif;
     /* font-weight: 300; */
     /* font-size: 15px; */
@@ -117,7 +117,7 @@ margin-bottom: 20px;
 .sections{
     margin-left:20px;
 }
-.vedioName{
+.videoName{
     margin-left: 30px;
     font-size: .6em;
     color:#29303b;

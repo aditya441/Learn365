@@ -26,7 +26,7 @@ body{
   /* background: #1c262f; */
   /* height: 12vh; */
   color: white;
-  height: 50px
+  height: 70px
 }
 .nav-link {
   color: #fff !important;
@@ -727,14 +727,16 @@ i {
   background-color: red ;
 }
 .active {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   background-color: #cbd7f3;
   color: black;
   /* display:flex;
   flex-direction: column; */
   text-align: start;
  padding-left: 5px;
-  margin-bottom: -16px
+ padding: 10px;
+
+  margin-bottom: -11px
 }
 .active a {
   /* display: flex;

@@ -51,7 +51,7 @@ class HeaderSignup extends Component {
 
               
             <div className="dropdown">
-               <div className="dropdown-toggle" data-toggle="dropdown">
+               <div className="dropdown-toggle" data-toggle="dropdown" style={{cursor:'pointer'}}>
                  <img
                    src={userDummyPic}
                    alt="user-dummy-pic"

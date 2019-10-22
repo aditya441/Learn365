@@ -24,11 +24,15 @@ class Videos extends Component {
             {console.log(this.props.checked)}
             
             <ul className="collapse list-unstyled" id={this.props.section.key}>
-                <span className="video-box"><input type="checkbox" checked={this.props.checked} onChange={this.handleChangeChk}/>
+              
+
+                <span className="video-box" >
+                {/* <input type="checkbox" checked={this.props.checked} onChange={this.handleChangeChk}/> */}
                 <a href={`/${this.props.id}/${video.videoId}/Sections`} title={video.videoName}>
                 {video.videoName}
               </a>
               </span>
+               
               </ul>
           </div>
           ))}  

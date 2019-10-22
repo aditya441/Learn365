@@ -31,14 +31,14 @@ class DeleteCourse extends Component{
   {/* <div className="progress">
     <p>progress bar</p>
   </div> */}
-  {/* <Link to={`/${this.props.course.courseId}/Sections`}>
+  <Link to={`/${this.props.course.courseId}/Sections`}>
     <button type="button" class="btn btn-danger btn-sm">
       Start Course
     </button>
-  </Link> */}
+  </Link>
   <button
     onClick={()=>this.props.deleteCourse(this.props.id)}
-    style={{ marginLeft: "70px" }}
+    style={{ marginLeft: "10px" }}
     type="button"
     className="btn btn-danger btn-sm"
   >
