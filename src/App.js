@@ -4,7 +4,6 @@ import './App.css';
 import Addquiz from './components/quizComponents/addQuiz';
 import Showing from './components/quizComponents/showingQuiz';
 import QuestionBox from './components/quizComponents/QuestionBox';
-import Addquiz from './components/quizComponents/addQuiz'
 import Register from './components/registration';
 import Result from './components/quizComponents/Result';
 import Login from './components/login';

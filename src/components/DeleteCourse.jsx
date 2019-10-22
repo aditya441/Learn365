@@ -28,19 +28,19 @@ class DeleteCourse extends Component{
 </span>
 
 <div className="course-footer">
-  <div className="progress">
+  {/* <div className="progress">
     <p>progress bar</p>
-  </div>
-  <Link to={`/${this.props.course.courseId}/Sections`}>
+  </div> */}
+  {/* <Link to={`/${this.props.course.courseId}/Sections`}>
     <button type="button" class="btn btn-danger btn-sm">
       Start Course
     </button>
-  </Link>
+  </Link> */}
   <button
     onClick={()=>this.props.deleteCourse(this.props.id)}
-    style={{ marginLeft: "30px" }}
+    style={{ marginLeft: "70px" }}
     type="button"
-    class="btn btn-danger btn-sm"
+    className="btn btn-danger btn-sm"
   >
     Delete
   </button>

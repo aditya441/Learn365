@@ -53,6 +53,7 @@ class MyCourse extends Component {
     console.log(id);
     this.setState({courses:[...this.state.courses.filter(course=> course.courseId !== id)]});
     this.delete(id)
+    this.deleteSections(id)
   };
 
       delete=(id)=>{
@@ -63,9 +64,19 @@ class MyCourse extends Component {
           console.error("Error removing document: ", error);
         });
       }
+      deleteSections=(id)=>{
+        firebase.firestore.collection('sections')
+        .where("courseId", "==", id)
+        .delete().then(()=>{
+          console.log('sections successfully deleted!')
+        }).catch((err)=>{
+          console.error('occuring error: ',err)
+        })
+
+      }
 
   render() {
-    console.log(this.state.courses);
+    // console.log(this.state.courses);
     return (
       <div>
         <nav className="course-header">
@@ -82,45 +93,8 @@ class MyCourse extends Component {
 
         <div className="card-wrapper">
           {this.state.courses.map(course => (
-            <DeleteCourse id={course.courseId} course={course} deleteCourse={this.handleDelete}/>
-              // <div key={course.courseId} className="box">
-              //   {/* {console.log(course)} */}
-
-              //   <div className="card-image">
-              //     <img
-              //       src="https://i.udemycdn.com/course/240x135/1036600_93c4_5.jpg"
-              //       alt="How to Set your Course Goals: Official Udemy Course"
-              //       width="240"
-              //       height="135"
-              //     ></img>
-              //   </div>
-              //   <span className="course-body">
-              //     <h7>
-              //       <Link to={`/show/${course.key}`}>{course.courseName}</Link>
-              //     </h7>
-              //     <p>Learn 365 Team,Official Learn 365 Instructor Acoount</p>
-              //   </span>
-
-              //   <div className="course-footer">
-              //     <div className="progress">
-              //       <p>progress bar</p>
-              //     </div>
-              //     <Link to={`/${course.key}/Sections`}>
-              //       <button type="button" class="btn btn-danger btn-sm">
-              //         Start Course
-              //       </button>
-              //     </Link>
-              //     <button
-              //       onClick={this.handleDelete(course.courseId)}
-              //       style={{ marginLeft: "30px" }}
-              //       type="button"
-              //       class="btn btn-danger btn-sm"
-              //     >
-              //       Delete
-              //     </button>
-              //   </div>
-              // </div>
-            
+            <DeleteCourse key={course.courseId} id={course.courseId} course={course} deleteCourse={this.handleDelete}/>
+             
     ))}
         </div>
       </div>
