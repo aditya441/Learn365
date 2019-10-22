@@ -47,7 +47,7 @@ class Show extends Component {
   render() {
     return (
       <div>
-        <nav className="course-header" >
+        <nav className="course-header" style={{marginLeft:'-150px'}} >
           <h3>Welcome</h3>
           <tr className="course-header-list">
             <th style={{fontWeight:'bolder'}}>All Courses</th>

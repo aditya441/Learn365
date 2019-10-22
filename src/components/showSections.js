@@ -16,7 +16,7 @@ class Display extends Component {
         url: "",
         expanded: false,
         checked: false,
-        courseName:''
+        courseName:'',
       };
     }
     onCollectionUpdate = (querySnapshot) => {
@@ -62,6 +62,9 @@ class Display extends Component {
     }
   });
     }
+    onContinue = () => {
+      window.location = `/${this.props.match.params.courseId}/takequiz`;
+    };
 
     // componentDidUpdate(prevProps,prevState) {
      
@@ -81,7 +84,7 @@ class Display extends Component {
             {this.state.sections.map(section => (
               <Section checked={this.state.checked} id={section.courseId} section={section} />
             ))}
-            <button className='btn btn-link'> Take Quiz</button>
+            <button onClick={this.onContinue} className='btn btn-link'> Take Quiz</button>
           </nav>
           <div className="video-content" id="video-content">
             <div className="embed-responsive embed-responsive-16by9">

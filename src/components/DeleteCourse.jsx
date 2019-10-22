@@ -24,7 +24,7 @@ class DeleteCourse extends Component{
   <h7>
     <Link to={`/show/${this.props.course.courseId}`}>{this.props.course.courseName}</Link>
   </h7>
-  <p>Learn 365 Team,Official Learn 365 Instructor Acoount</p>
+  <p>Learn 365 Team,Official Learn 365 Instructor Account</p>
 </span>
 
 <div className="course-footer">

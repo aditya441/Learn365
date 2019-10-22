@@ -9,8 +9,9 @@ export default function QuestionBox(props,{selected}) {
                 {props.question}
                 </div>
                 {answer.map((text,index)=>(
-                    <button key={index} className="answerBtn" onClick={() => {
-                        setAnswer([text]); 
+                    <button key={index} className="answerBtn" onClick={(e) => {
+                        e.target.style.cssText = 'border: 4px solid red';
+                        // setAnswer([text]); 
                         props.selected(text);
                     }}>{text}</button>
                 ))}           

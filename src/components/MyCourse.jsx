@@ -79,7 +79,7 @@ class MyCourse extends Component {
     // console.log(this.state.courses);
     return (
       <div>
-        <nav className="course-header">
+        <nav className="course-header" style={{marginLeft:'-150px'}}>
           <h3>Welcome</h3>
           <tr className="course-header-list">
             <th><Link to={'/Courses'}>All Courses</Link></th>
