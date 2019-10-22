@@ -159,7 +159,7 @@ playAgain = () => {
                    <Single data={this.state.courseData} {...props}/>
                   </React.Fragment>
                 )} />  
-                <Route path='/quiz' render={props =>(
+                {/* <Route path='/quiz' render={props =>(
           <React.Fragment>
             <Headersignup  {...props} name={this.state.user}/>
             <div className="quizcontainer">
@@ -173,19 +173,19 @@ playAgain = () => {
               {this.state.responses === 3 ? (<Result response={this.state.responses}score={this.state.score} playAgain={this.playAgain}/>) : null}
             </div>
           </React.Fragment>
-        )} />
+        )} /> */}
         <Route path='/:userId/course/:courseId/addQuiz' render={props => (
           <React.Fragment>
             <Headersignup {...props} name={this.state.user}/>
             <Addquiz {...props} userId={this.state.user} />
           </React.Fragment>
         )} />
-         <Route path='/anotherquiz' render={props =>(
+         <Route path='/:userId/course/:courseId/anotherquiz' render={props =>(
           <React.Fragment>
             <Headersignup  {...props} name={this.state.user}/>
             <div className="quizcontainer">
-              <div className="title">Quiz</div>
-              <Showing data = {this.state.data}/>
+              {/* <div className="title">Quiz</div> */}
+              <Showing {...props} userId={this.state.user}/>
             </div>
           </React.Fragment>
         )} />

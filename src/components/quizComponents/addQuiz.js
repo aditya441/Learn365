@@ -1,101 +1,276 @@
-import React, { Component } from 'react'
-import firebase from 'firebase';
+import React, { Component } from "react";
+import firebase from "firebase";
+// import React, { Component } from 'react'
 
 export class addQuiz extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.ref =  firebase.firestore().collection('quiz');
-    
+    this.ref = firebase.firestore().collection("quiz");
+
     this.state = {
-        quizTitle:'',
-        questionName:'',
-        optionname: "",
-        optionArray: [],
-        option1:'',
-        option2:'',
-        option3:'',
-        option4:'',
-        courseId:this.props.match.params.courseId,
-        correctAnswer:''
+      questionName: "",
+      op1: "",
+      op2: "",
+      op3: "",
+      op4: "",
+      courseId:this.props.match.params.courseId,
+      quiz: []
     };
-}
+  }
+  componentDidMount() {
+    let arr = [];
+    this.ref
+      .where("courseID", "==", 1)
+      .get()
+      .then(snap => {
+        snap.forEach(ele => {
+          arr.push({
+            questionName: ele.data().questionName,
+            op1: ele.data().options[0],
+            op2: ele.data().options[1],
+            op3: ele.data().options[2],
+            op4: ele.data().options[3],
+            answer: ele.data().answer
+          });
+        });
+        this.setState({ quiz: arr });
+      });
+  }
 
-onQuestionChange = e => {
-  this.setState({questionName:e.target.value})
-};
-onCorrectAnswer = e => {
-  this.setState({correctAnswer:e.target.value})
-};
+  radioHandleClick = e => {
+    document.querySelectorAll(".textArea").forEach(ele => {
+      ele.style.display = "none";
+    });
+    document.querySelectorAll(".quizOptions").forEach(ele => {
+      ele.style.display = "block";
+      ele.textContent = ele.nextSibling.value;
+    });
+  };
 
-onTitleChange = e => {
-  const state = this.state;
-  state[e.target.name] = e.target.value;
-  this.setState(state);
-};
-onChange=(e)=>{
-  this.setState({quizTitle:e.target.value})
-}
-onSubmit=(e)=>{
-  this.state.optionArray.push(this.state.option1);
-  this.state.optionArray.push(this.state.option2);
-  this.state.optionArray.push(this.state.option3);
-  this.state.optionArray.push(this.state.option4);
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
-  const {questionName, optionArray, quizTitle,courseId,correctAnswer } = this.state;
-  e.preventDefault();
-  this.ref.add({
-      quizTitle,
-      questionName,
-      optionArray,
-      courseId,
-      correctAnswer
+  textAreaNone = e => {
+    document.querySelectorAll(".textArea").forEach(ele => {
+      if (e.target !== ele) {
+        if (ele.value !== "") {
+          ele.style.display = "none";
+          ele.previousSibling.style.display = "block";
+          ele.previousSibling.textContent = ele.value;
+        }
+      }
+    });
+    document.querySelectorAll(".quizOptions").forEach(ele => {
+      ele.addEventListener("click", e => {
+        e.target.style.display = "none";
+        e.target.nextSibling.style.display = "block";
+      });
+      // if(e.target !== ele){
+      //   if(ele.value !== ''){
+      //     ele.style.display = 'none';
+      //     ele.previousSibling.textContent = ele.value;
+      //   }
+      // }
+    });
+  };
 
-  }).then((docRef)=>{
-      console.log(docRef.id);
-      this.setState({
-        quizTitle:"",
-        questionName: "",
-        optionArray: [],
-        option1:'',
-        option2:'',
-        option3:'',
-        option4:'',
-        correctAnswer:''
-      })
-      
-  })
-  .catch((error)=>{
-      console.error(error);
-  });
-  
-}
-onContinue = () => {
-  window.location = "/welcome"
-}
-    render() {
-        return (
-            <div className='course-body'>
+  SubmitQuiz = e => {
+    let ans;
+    let options = [];
+    e.preventDefault();
+    document.querySelectorAll(".options").forEach(ele => {
+      if (ele.checked) {
+        ans = ele.parentElement.nextSibling.firstChild.nextSibling.value;
+      }
+      options.push(ele.parentElement.nextSibling.firstChild.nextSibling.value);
+    });
+    let qusName = document.querySelector(".questionName").value;
+    this.ref.add({
+      courseID: this.state.courseId,
+      questionName: qusName,
+      options: options,
+      answer: ans
+    });
+    let arrNew = [];
+    this.ref
+      .where("courseID", "==", this.state.courseId)
+      .get()
+      .then(snap => {
+        snap.forEach(ele => {
+          arrNew.push({
+            questionName: ele.data().questionName,
+            op1: ele.data().options[0],
+            op2: ele.data().options[1],
+            op3: ele.data().options[2],
+            op4: ele.data().options[3],
+            answer: ele.data().answer
+          });
+        });
+        this.setState({
+          quiz: arrNew,
+          questionName: "",
+          op1: "",
+          op2: "",
+          op3: "",
+          op4: ""
+        });
+        document.querySelectorAll(".quizOptions").forEach(ele => {
+          ele.textContent = "";
+          ele.style.display = "none";
+          ele.nextSibling.style.display = "block";
+          ele.nextSibling.value = "";
+        });
+        document.querySelectorAll(".options").forEach(ele => {
+          ele.checked = false;
+        });
+      });
+  };
+  render() {
+    return (
+      <div className="quiz">
+        <div className="course1" style={{ margin: "0 20vw", color: "#a1a2a3" }}>
+          <h4
+            style={{ textAlign: "center", color: "#a1a2a3", fontWeight: "700" }}
+          >
+            Create new quiz
+          </h4>
+          <hr />
+          <div className="">
+            <form onSubmit={this.SubmitQuiz}>
+              <div className="container1 p-5">
+                <div>
+                  <div className="row1">
+                    <label className="col-md-3 lH">Enter Question</label>
+                    <div className="col-md-9">
+                      <input
+                        type="text"
+                        name="questionName"
+                        className=" questionName"
+                        placeholder="Enter question"
+                        onChange={this.handleChange}
+                        value={this.state.questionName}
+                      />
+                    </div>
+                  </div>
+                  <div className="row1">
+                    <div className="col-md-1">
+                      <input
+                        type="radio"
+                        name="selectAnswer"
+                        onClick={this.radioHandleClick}
+                        className="options "
+                      />
+                    </div>
+                    <div className="col-md-11">
+                      <span className="quizOptions"></span>
+                      <textarea
+                        name="op1"
+                        className="textArea "
+                        style={{ resize: "none" }}
+                        onClick={this.textAreaNone}
+                        onChange={this.handleChange}
+                        placeholder="Option 1"
+                      >
+                        {this.state.op1}
+                      </textarea>
+                    </div>
+                  </div>
+                  
+                  <div className="row1">
+                    <div className="col-md-1">
+                      <input
+                        type="radio"
+                        name="selectAnswer"
+                        onClick={this.radioHandleClick}
+                        className="options "
+                      />
+                    </div>
+                    <div className="col-md-11">
+                      <span className="quizOptions"></span>
+                      <textarea
+                        name="op2"
+                        className=" textArea"
+                        style={{ resize: "none" }}
+                        onClick={this.textAreaNone}
+                        onChange={this.handleChange}
+                        placeholder="Option 2"
+                      >
+                        {this.state.op2}
+                      </textarea>{" "}
+                    </div>
+                  </div>
+                  <div className="row1">
+                    <div className="col-md-1">
+                      <input
+                        type="radio"
+                        name="selectAnswer"
+                        onClick={this.radioHandleClick}
+                        className="options "
+                      />
+                    </div>
+                    <div className="col-md-11">
+                      <span className="quizOptions"></span>
+                      <textarea
+                        name="op3"
+                        className=" textArea"
+                        style={{ resize: "none" }}
+                        onClick={this.textAreaNone}
+                        onChange={this.handleChange}
+                        placeholder="Option 3"
+                      >
+                        {this.state.op3}
+                      </textarea>{" "}
+                    </div>
+                  </div>
+                  <div className="row1">
+                    <div className="col-md-1">
+                      <input
+                        type="radio"
+                        name="selectAnswer"
+                        onClick={this.radioHandleClick}
+                        className="options "
+                      />
+                    </div>
+                    <div className=" col-md-11">
+                      <span className="quizOptions"></span>
+                      <textarea
+                        name="op4"
+                        className=" textArea"
+                        style={{ resize: "none" }}
+                        onClick={this.textAreaNone}
+                        onChange={this.handleChange}
+                        placeholder="Option 4"
+                      >
+                        {this.state.op4}
+                      </textarea>{" "}
+                    </div>
+                  </div>
+                  <center><button type="submit" className="btn btn-success quizbutton">
+                    Submit
+                  </button></center><hr />
+                </div>
 
-            
-      <div className='course'>
-     
-        <div className="course-title">
-          <label htmlFor="" className='col-xs-2 course-name'>Quiz Details</label>{" "}
-          <input type="text" name='quizTitle' onChange={this.onChange} className='form-control col-xs-6 course-input'  placeholder="Enter quiz title" required />
-          <input type="text" name="questionName" value={this.state.questionName} onChange={this.onQuestionChange} className='form-control col-xs-6 course-input' placeholder="Enter the question" required/>
-          <input value={this.state.option1} onChange={this.onTitleChange} type="text" className="form-control col-xs-6 course-input" name="option1" placeholder="Enter Choice" required/>
-          <input value={this.state.option2} onChange={this.onTitleChange} type="text" className="form-control col-xs-6 course-input" name="option2" placeholder="Enter Choice" required/>
-          <input value={this.state.option3} onChange={this.onTitleChange} type="text" className="form-control col-xs-6 course-input" name="option3" placeholder="Enter Choice" required/>
-          <input value={this.state.option4} onChange={this.onTitleChange} type="text" className="form-control col-xs-6 course-input" name="option4" placeholder="Enter Choice" required/>
-          <input type="text" name="correctAnswer" value={this.state.correctAnswer} onChange={this.onCorrectAnswer} className='form-control col-xs-6 course-input' placeholder="Enter Correct Answer" required/>
-          <button onClick={this.onSubmit} type='submit' className='btn btn-danger submit'> Save</button>
-          <button onClick={this.onContinue} type='submit' className='btn btn-danger submit ml-5'> Continue</button>
-
+                <div className="appendQuiz">
+                  <center><h4 className='p-3'>Your Response</h4></center><hr />
+                  {console.log(this.state.quiz)}
+                  {this.state.quiz.map(ele => (
+                    <div>
+                      <p>Question name: {ele.questionName}</p>
+                      <p>Option 1: {ele.op1}</p>
+                      <p>Option 2: {ele.op2}</p>
+                      <p>Option 3: {ele.op3}</p>
+                      <p>Option 4: {ele.op4}</p>
+                      <p>Answer: {ele.answer}</p>
+                      <hr /></div>
+                  ))}
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-     </div>
-    </div>
-        )
-    }
+      </div>
+    );
+  }
 }
-
-export default addQuiz
+export default addQuiz;

@@ -312,13 +312,24 @@ b,strong {
  }
 
  
- 
+ .textArea {
+   width: 100%;
+   padding: 2px 6px;
+   border: none;
+   border: 1px solid #a1a2a3;
+   border-radius: 4px;
+ }
+ .questionName {
+  width: 100%;
+  padding: 2px 6px;
+  border: none;
+  border: 1px solid #a1a2a3;
+  border-radius: 4px;
+}
  .col {
   color: black;
   text-align: center;
   font-weight: bold;
-
-  /* background-color: white; */
   background-size: cover;
   border:0.5px solid rgb(97, 94, 94);
   border-radius: 2%;
@@ -413,6 +424,7 @@ a:focus{
   font-weight: bold;
   margin-bottom: 5px;
 }
+
 
 .questionBox {
   position: relative;
@@ -715,4 +727,26 @@ i {
 ._sidebar--header--2BaH_  p {
   padding-top: 20px;
   font-size: 1.2rem;
+}
+.quiz {
+  display: flex;
+  justify-content: center;
+  padding:50px;
+  flex-direction: column;
+  background-size: cover;
+  /* border: 2px solid black; */
+}
+.course1{
+  background:white;
+  box-shadow: 3px 3px 3px 3px #c76071;
+  border-radius: 2px;
+  padding:15px;
+}
+
+.lH{
+  line-height: 2;
+  font-size: 15px;
+}
+.row1 {
+  display: flex;
 }

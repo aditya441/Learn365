@@ -1,36 +1,71 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
+import QuestionBox from './QuestionBox'
+import Result from './Result'
 
 export class showingQuiz extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={
-          quiz:[],
+        this.ref = firebase.firestore().collection("quiz");
+        this.state = {
+         data:[],
+         score:0,
+         courseId:this.props.match.params.courseId,
+         responses:0
+        };
+      }
+      computeAnswer = (answer,correctAnswer) => {
+        if(answer === correctAnswer){
+          this.setState({
+            score:this.state.score + 1
+          });
         }
-    }
-    fetchData = (e) =>{
-        var don =[]
-        const db=firebase.firestore().collection("quiz").where("courseId", "==", "C3MngP0rGQ2xeZA3Z53k")
-        db.get()
-        .then(function(querySnapshot) {
-            querySnapshot.forEach((doc)=> {
-                // doc.data() is never undefined for query doc snapshots
-                    console.log(doc.id, " => ", doc.data());
-                    this.setState({quiz:[doc.data()]})
-            });
+        this.setState({
+          responses:this.state.responses + 1
         })
-        .catch(function(error) {
-            console.log("Error getting documents: ", error);
-        });
-    }
+      }
+      playAgain = () => {
+        this.setState({
+          score:0,
+          responses:0
+        })
+      }
+      componentDidMount(){
+          this.fetchQuiz();
+      }
+      fetchQuiz = () => {
+          let arr = [];
+          firebase.firestore().collection("quiz")
+          .where("courseID","==",this.state.courseId)
+          .get()
+          .then(snapshot => {
+              snapshot.forEach(ele => {
+                  console.log(ele.data());
+                  arr.push(ele.data());
+              })
+              if(snapshot.empty){
+                  console.log("no matching documents")
+                  return;
+              }
+            //   console.log(snapshot.data());
+            this.setState({data: arr});
+          })
+
+      }
     render() {
-        console.log(this.state.quiz)
+        console.log(this.state.data.length)
         return (
-            <div>
-                <button onClick={this.fetchData}>hii</button>
+            <div className="quizcontainer">
+                <div className="title">Quiz</div>
+                {this.state.responses < this.state.data.length && 
+                this.state.data.map((question)=> (
+                    <QuestionBox question={question.questionName} option={question.optionArray} selected={answer => this.computeAnswer(answer,question.correctAnswer)}/>
+                ))}
+                {this.state.responses === this.state.data.length ? (<Result responses={this.state.data.length} score={this.state.score} playAgain={this.playAgain}/>) : null}
             </div>
         )
     }
 }
 
 export default showingQuiz
+
