@@ -69,6 +69,9 @@ onSubmit=(e)=>{
   });
   
 }
+onContinue = () => {
+  window.location = "/welcome"
+}
     render() {
         return (
             <div className='course-body'>
@@ -85,7 +88,8 @@ onSubmit=(e)=>{
           <input value={this.state.option3} onChange={this.onTitleChange} type="text" className="form-control col-xs-6 course-input" name="option3" placeholder="Enter Choice" required/>
           <input value={this.state.option4} onChange={this.onTitleChange} type="text" className="form-control col-xs-6 course-input" name="option4" placeholder="Enter Choice" required/>
           <input type="text" name="correctAnswer" value={this.state.correctAnswer} onChange={this.onCorrectAnswer} className='form-control col-xs-6 course-input' placeholder="Enter Correct Answer" required/>
-          <button onClick={this.onSubmit} type='submit' className='btn btn-danger submit'> Submit</button>
+          <button onClick={this.onSubmit} type='submit' className='btn btn-danger submit'> Save</button>
+          <button onClick={this.onContinue} type='submit' className='btn btn-danger submit ml-5'> Continue</button>
 
         </div>
      </div>

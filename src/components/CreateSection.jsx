@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AddVedio from "./AddVedio";
 import firebase from "firebase";
+const uuidv1 = require('uuid/v1');
 // import { Link } from "react-router-dom";
 class CreateSection extends Component {
   constructor(props) {
@@ -14,13 +15,15 @@ class CreateSection extends Component {
       videos: [],
       vedioName: "",
       vedioUrl: "",
+      vedioId:'',
       courseName: "",
       sections: [],
       name: "",
       data: [],
       v: [],
       saveClicked: false,
-      addSection:false
+      addSection:false,
+      user : this.props.match.params.userId
     };
   }
   
@@ -40,22 +43,56 @@ class CreateSection extends Component {
   };
   addClicked = () => {
     // console.log("add clicked");
-    this.state.videos.push({
-      vedioName: this.state.vedioName,
-      vedioUrl: this.state.vedioUrl
-    });
-    this.state.v.push({
-      vedioName: this.state.vedioName,
-      vedioUrl: this.state.vedioUrl
-    });
-    this.setState({ vedioName: "", vedioUrl: "" });
-    
+    const regexp =  /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
+    if (!regexp.test(this.state.vedioUrl))
+    {
+      
+          document.querySelector(".errorMsg").style.display = "block";
+          document.querySelector(".errorMsg").textContent =
+            "Please enter correct url format";
+          // alert('please input something');
+        
+    }
+    else
+    {
+
+      if(this.state.vedioName===''){
+        document.querySelector(".errorMsg").style.display = "block";
+        document.querySelector(".errorMsg").textContent =
+          "Please enter all the details";
+      }else{
+        document.querySelector(".errorMsg").style.display = "none";
+        this.state.videos.push({
+          vedioName: this.state.vedioName,
+          vedioUrl: this.state.vedioUrl,
+          vedioId:uuidv1()
+        });
+        this.state.v.push({
+          vedioName: this.state.vedioName,
+          vedioUrl: this.state.vedioUrl,
+          vedioId:uuidv1()
+        });
+        this.setState({ vedioName: "", vedioUrl: "",vedioId:'' });
+      }
+     
+      
+    }
   };
   addSection=()=>{
-    this.setState({ saveClicked: true });
-    this.setState({addSection:true});
-    
-    this.setState({ name: this.state.sectionName });
+    if (this.state.sectionName === "") {
+      document.querySelector(".errorMsg").style.display = "block";
+      document.querySelector(".errorMsg").textContent =
+      "Please give the section name";
+      // alert('please input something');
+      
+    } else{
+      this.setState({ saveClicked: true });
+      this.setState({addSection:true});
+      
+      this.setState({ name: this.state.sectionName });
+      document.querySelector(".errorMsg").style.display = "none";
+
+    }
     // document.querySelector('.addVideo').style.display='block'
   }
   
@@ -63,13 +100,14 @@ class CreateSection extends Component {
     this.setState({ onClick: this.state.onClick.concat([1]) });
   };
   onContinue = () => {
-    window.location = "/welcome";
+    window.location = `/${this.state.user}/course/${this.state.courseId}/addquiz`;
   };
 
   onSubmit = e => {
     e.preventDefault();
       // this.setState({ saveClicked: false });
     this.setState({addSection:false})
+    document.querySelector(".errorMsg").style.display = "none";
     
     // this.setState({ name: this.state.sectionName });
     // this.setState({videos: this.state.v})
@@ -114,17 +152,9 @@ class CreateSection extends Component {
     });
     document.querySelector('.course-input').addEventListener('keypress', e=>{
       if(e.keyCode === 13){
+        this.addSection();
         
-          if (document.querySelectorAll(".course-input").value === "") {
-            document.querySelector(".errorMsg").style.display = "block";
-            document.querySelector(".errorMsg").textContent =
-              "Please give all the details";
-            // alert('please input something');
-            
-          } else{
-
-            this.addSection();
-          }
+          
         // alert('hello');
       }
     })
@@ -230,10 +260,7 @@ class CreateSection extends Component {
               placeholder="Enter section title"
               required
             />
-            <div
-              className="errorMsg p-3 my-3 bg-danger text-light"
-              style={{ display: "none" }}
-            ></div>
+           
             {/* <button
               onClick={this.addSection}
               type="button"
@@ -262,6 +289,10 @@ class CreateSection extends Component {
               addClicked={this.addClicked}
             />
             )}
+            <div
+              className="errorMsg p-3 my-3 bg-danger text-light"
+              style={{ display: "none" }}
+            ></div>
           {/* ))} */}
           <div className="a">
             <button
@@ -280,7 +311,7 @@ class CreateSection extends Component {
               className="btn btn-danger continue"
             >
               {" "}
-              Continue
+              Add Quiz
             </button>
           </div>
       

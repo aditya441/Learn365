@@ -84,9 +84,9 @@ margin-bottom: 20px;
     margin-left: 10px;
     
 }
-.addSection{
+/* .addSection{
 
-}
+} */
 .add{
     margin-left:10px;
     height: 40px;
@@ -141,4 +141,9 @@ margin-bottom: 20px;
     margin-left:20px;
     font-size: .8em;
     padding: 3px;
+}
+.errorMsg{
+    margin-right:3em;
+    margin-left:3em;
+    
 }
