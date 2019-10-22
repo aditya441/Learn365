@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route ,Switch} from 'react-router-dom';
 import './App.css';
+import NewWelcome from './components/quizComponents/mywelcome'
 import Addquiz from './components/quizComponents/addQuiz';
 import Showing from './components/quizComponents/showingQuiz';
 // import QuestionBox from './components/quizComponents/QuestionBox';
@@ -192,6 +193,12 @@ playAgain = () => {
           </React.Fragment>
         )} />
         <Route path='/show/:id' component={Show} />
+        <Route path='/newWelcome' render={props =>(
+          <React.Fragment>
+            <Headersignup  {...props} name={this.state.user}/>
+              <NewWelcome/>
+          </React.Fragment>
+        )} />
           </Switch>
         </Router>
        

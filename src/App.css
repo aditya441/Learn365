@@ -792,3 +792,30 @@ i {
   margin-top: 10px;
   
 }
+.newwelcomepara{
+  color:black;
+}
+.myvutton, .button--blue {
+  width: 13.75rem;
+  color: #fff;
+  /* background-color: #02b3e4; */
+  border: 0.125rem solid transparent;
+}
+.welcome-new {
+  display: flex;
+  margin-top: 8em;
+  width: 80%;
+  box-shadow: 5px 5px 5px 5px rgba(167, 167, 167, 0.679)
+
+}
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 6em;
+  margin-left: 11em;
+}
+.welcome_detail {
+  padding: 20px;
+  /* border: 2px solid black; */
+}
