@@ -192,6 +192,7 @@ playAgain = () => {
           </React.Fragment>
         )} />
         <Route path='/show/:id' component={Show} />
+       
           </Switch>
         </Router>
        

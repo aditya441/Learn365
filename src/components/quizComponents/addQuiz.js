@@ -20,7 +20,7 @@ export class addQuiz extends Component {
   componentDidMount() {
     let arr = [];
     this.ref
-      .where("courseID", "==", 1)
+      .where("courseID", "==", this.state.courseId)
       .get()
       .then(snap => {
         snap.forEach(ele => {
@@ -132,9 +132,9 @@ export class addQuiz extends Component {
   render() {
     return (
       <div className="quiz">
-        <div className="course1" style={{ margin: "0 20vw", color: "#a1a2a3" }}>
+        <div className="course1" style={{ margin: "0 20vw", color: "#273746" }}>
           <h4
-            style={{ textAlign: "center", color: "#a1a2a3", fontWeight: "700" }}
+            style={{ textAlign: "center", color: "#273746", fontWeight: "700" }}
           >
             Create new quiz
           </h4>
@@ -249,11 +249,11 @@ export class addQuiz extends Component {
                       </textarea>{" "}
                     </div>
                   </div>
-                  <center><button type="submit" className="btn btn-danger quizbutton">
+                  <center><button type="submit" className="mt-2 btn btn-danger quizbutton">
                     Submit
                   </button>
                   {"       "}
-                  <button type="submit" className="btn btn-danger quizbutton ml-5" onClick={this.onContinue}>
+                  <button type="submit" className="mt-2 btn btn-danger quizbutton ml-5" onClick={this.onContinue}>
                     Continue
                   </button>
                   </center><hr />
